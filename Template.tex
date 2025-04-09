@@ -1,0 +1,108 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{pxfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[nottoc]{tocbibind}
+\usepackage{xcolor}
+\usepackage{float}
+
+\setcounter{MaxMatrixCols}{12}
+\lstset{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	xleftmargin=\parindent,
+	language=C++,
+	showstringspaces=false,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+	tabsize=2,
+}
+
+\title{Template for XCPC}
+\author{SUNCHAOYI}
+\date{2025-2026}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\pagebreak
+
+\section{Compile}
+
+\subsection{Fast I/O}
+\lstinputlisting{Fast IO.cpp}
+
+\subsection{Run.bash}
+\lstinputlisting{Run.bash}
+\pagebreak
+
+\section{Graph}
+
+\subsection{Diameter of a Tree}
+\lstinputlisting{Diameter.cpp}
+
+\subsection{Centroid of a Tree}
+\lstinputlisting{Centroid.cpp}
+
+
+\subsection{Minimum Spanning Tree}
+
+\subsubsection{Prim}
+\lstinputlisting{Minimum Spanning Tree(Prim).cpp}
+
+\subsubsection{Kruskal}
+\lstinputlisting{Minimum Spanning Tree(Kruskal).cpp}
+
+\subsection{LCA}
+\lstinputlisting{LCA(Binary Lifting).cpp}
+
+\subsection{Topological Sorting}
+\lstinputlisting{Topological Sorting.cpp}
+
+\subsection{Shortest Path}
+
+\subsubsection{Dijstrka}
+\lstinputlisting{Shortest Path(dijstrka).cpp}
+
+\subsubsection{SPFA}
+\lstinputlisting{Shortest Path(SPFA).cpp}
+
+\subsection{Tarjan}
+
+\lstinputlisting{Tarjan.cpp}
+
+\subsection{Bipartite Graph Matchings}
+
+\lstinputlisting{Bipartite Graph Matchings.cpp}
+
+\subsection{Flow}
+
+\subsubsection{Ford-Fulkerson}
+
+\subsubsection{Dinic}
+
+\section{Data Structure}
+
+\subsection{Segment Tree}
+
+\subsection{Fenwick Tree}
+
+\subsection{Heavy-Light Decomposition}
+
+\subsection{Splay Tree}
+
+\subsection{Sparse Table}
+
+\subsection{Persistent Data Structure}
+
+\end{document}
