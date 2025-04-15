@@ -11,7 +11,7 @@ class dijkstra
     void add (int u,int v,int w)
     {
         to[++cnt] = v;val[cnt] = w;nxt[cnt] = head[u];head[u] = cnt;
-        to[++cnt] = u;val[cnt] = v;nxt[cnt] = head[v];head[v] = cnt;
+        to[++cnt] = u;val[cnt] = w;nxt[cnt] = head[v];head[v] = cnt;
     }
     vector <ll> calc (int s)
     {
