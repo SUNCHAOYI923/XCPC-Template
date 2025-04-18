@@ -10,11 +10,11 @@ const int MOD = 1e9 + 7;
 inline int read ();
 class Trie
 {
-    int n,lg,cnt;
+    int n,cnt;
     vector <vector <int>> ch;
     vector <int> val,w;
     public :
-    Trie (int n,int lg) : n (n),lg (lg),val (2 * lg * n + 1,0),w (2 * lg * n + 1,0),ch (2 * lg * n + 1,vector <int> (2,0)) {cnt = 1;}
+    Trie (int n,int lg) : n (n),val (2 * lg * n + 1,0),w (2 * lg * n + 1,0),ch (2 * lg * n + 1,vector <int> (2,0)) {cnt = 1;}
     void pushup (int u)
     {
         w[u] = val[u] = 0;
