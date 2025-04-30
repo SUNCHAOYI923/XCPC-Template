@@ -12,9 +12,9 @@ inline int read ();
 inline void output ();
 int main ()
 {
-	//freopen (".in","r",stdin);
-	//freopen (".out","w",stdout);
-	return 0;
+    //freopen (".in","r",stdin);
+    //freopen (".out","w",stdout);
+    return 0;
 }
 inline int read ()
 {

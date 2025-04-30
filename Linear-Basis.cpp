@@ -8,17 +8,17 @@ class Basis
     void modify (T x)
     {
         for (int i = lg - 1;~i;--i)
-		{
-			if (!((1ll << i) & x)) continue;
-			if (!p[i]) {p[i] = x;break;}
-			else x ^= p[i]; 
-		}
+        {
+            if (!((1ll << i) & x)) continue;
+            if (!p[i]) {p[i] = x;break;}
+            else x ^= p[i]; 
+        }
     }
     T query ()
     {
         T ans = 0;
         for (int i = lg - 1;~i;--i)
-		    if ((ans ^ p[i]) > ans) ans ^= p[i];
+            if ((ans ^ p[i]) > ans) ans ^= p[i];
         return ans;
     }
 };

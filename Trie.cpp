@@ -1,6 +1,6 @@
 struct Trie 
 {
-    int n,m,cnt; // m 总长度
+    int n,m,cnt;//m total len
     vector <vector <int>> ch;
     vector <int> vis;
     public :
@@ -11,7 +11,7 @@ struct Trie
         for (int i = 1;i <= len;++i) 
         {
             int c = s[i] - 'a';
-            if (!ch[u][c]) ch[u][c] = ++cnt;  // 如果没有，就添加结点
+            if (!ch[u][c]) ch[u][c] = ++cnt;
             u = ch[u][c];
         }
         ++vis[u];
