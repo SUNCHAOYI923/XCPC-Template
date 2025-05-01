@@ -1,8 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1746025323.85011 "c:/Users/31877/Desktop/XCPC-Template/Template.tex" "Template.pdf" "Template" 1746025325.02683 0
+["pdflatex"] 1746077996.60427 "c:/Users/31877/Desktop/XCPC-Template/Template.tex" "Template.pdf" "Template" 1746077998.68925 0
   "01-Trie.cpp" 1746023851 1159 568faf0acd509da8c9a5cef6c1ddff21 ""
+  "Arithmetic.cpp" 1746077995 1272 1e4a0e2e5bc477cebb859ec9dbecacea ""
   "Bipartite Graph Matchings.cpp" 1744245359 719 818d208fc0e04162f864457393e009e4 ""
   "Centroid.cpp" 1744245359 729 fa3067cc90fd5c665d1a70deb9cece29 ""
+  "Combination.cpp" 1746077872 597 6a5bd1eb5bdfd093f33d2ffeda852d96 ""
   "Diameter.cpp" 1744727499 647 ebb21669ad07c3cca1cbab4ad20fb58e ""
   "Dinic.cpp" 1744731149 1627 7fb3881d48fae61e2cd0315605980118 ""
   "Edmonds_Karp.cpp" 1746023525 1452 761adfaff62b6d4dc1ad723c277d7d8d ""
@@ -15,12 +17,12 @@
   "Shortest Path(SPFA).cpp" 1744729011 1253 83d55511f4edd0e7e24cb4d402e7f1bc ""
   "Shortest Path(dijstrka).cpp" 1744729004 1160 e6fae6fdc9fdf8bbb6df7705834439dd ""
   "Tarjan.cpp" 1744245359 1328 a2b3e7f0441f3d2ed8b4cf0a642d635f ""
-  "Template.aux" 1746025324 6946 78efc74f4a79da7b2439580083b97e48 "pdflatex"
-  "Template.tex" 1746025322 2878 613b71ce4c63109675094d99990a181e ""
-  "Template.toc" 1746025324 3138 c147f1b98e426adc60d3f282f865a698 "pdflatex"
+  "Template.aux" 1746077998 7234 30b75b1b818e9c9ae72ecf7dc33905d8 "pdflatex"
+  "Template.tex" 1746077944 3017 08bf9f3d53960a08057bb21fda02748e ""
+  "Template.toc" 1746077998 3202 f8f08f735f109bc009defacfe7b3f8bd "pdflatex"
   "Topological Sorting.cpp" 1744245359 688 71e26a49d6effd0f3bbd73a3f7c366a2 ""
   "Trie.cpp" 1746023514 736 1c1f40245e466e7a9234054a818b40fc ""
-  "c:/Users/31877/Desktop/XCPC-Template/Template.tex" 1746025322 2878 613b71ce4c63109675094d99990a181e ""
+  "c:/Users/31877/Desktop/XCPC-Template/Template.tex" 1746077944 3017 08bf9f3d53960a08057bb21fda02748e ""
   "d:/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1744216016 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "d:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1744216194 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxb.tfm" 1744217565 1908 71cbb8d876dcffec4b8b192a0ed11ec0 ""

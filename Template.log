@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.10)  30 APR 2025 23:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.10)  1 MAY 2025 13:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -609,33 +609,37 @@ LaTeX Font Info:    Font shape `OT1/pxtt/m/it' in size <9> not available
 
 [9]) (./Dinic.cpp
 
-[10]) (./Linear-Basis.cpp
+[10])
 
-[11]) (./Trie.cpp
+[11] (./Linear-Basis.cpp)
 
-[12]) (./01-Trie.cpp
+[12] (./Arithmetic.cpp) (./Combination.cpp)
 
-[13])
+[13]
 
-[14] (./Template.aux)
+[14] (./Trie.cpp) (./01-Trie.cpp
+
+[15])
+
+[16] (./Template.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17643 strings out of 473190
- 328003 string characters out of 5719979
- 1233095 words of memory out of 5000000
- 40541 multiletter control sequences out of 15000+600000
+ 17684 strings out of 473190
+ 328476 string characters out of 5719979
+ 1327095 words of memory out of 5000000
+ 40576 multiletter control sequences out of 15000+600000
  586224 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,6n,107p,447b,1643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2025/texmf-dist/fonts/type1/public/pxfonts/rpxb.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txbtt.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txtt.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txtt.pfb><d:/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><d:/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on Template.pdf (14 pages, 95077 bytes).
+Output written on Template.pdf (16 pages, 97734 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

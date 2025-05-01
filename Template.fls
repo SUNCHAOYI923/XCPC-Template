@@ -367,6 +367,12 @@ INPUT Dinic.cpp
 INPUT ./Linear-Basis.cpp
 INPUT ./Linear-Basis.cpp
 INPUT Linear-Basis.cpp
+INPUT ./Arithmetic.cpp
+INPUT ./Arithmetic.cpp
+INPUT Arithmetic.cpp
+INPUT ./Combination.cpp
+INPUT ./Combination.cpp
+INPUT Combination.cpp
 INPUT ./Trie.cpp
 INPUT ./Trie.cpp
 INPUT Trie.cpp
