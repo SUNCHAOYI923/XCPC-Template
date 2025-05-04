@@ -1,7 +1,7 @@
 class Tarjan
 {
     int n,m,cnt,times,scc_cnt;
-    vector <int> head,to,nxt,val,vis,low,scc,dfn;
+    vector <int> head,to,nxt,low,scc,dfn;
     stack <int> s;
     void tarjan (int u)
     {
@@ -15,7 +15,7 @@ class Tarjan
                 tarjan (v);
                 low[u] = min (low[u],low[v]);
             }
-            else if (!vis[v]) low[u] = min (low[u],dfn[v]);
+            else if (!scc[v]) low[u] = min (low[u],dfn[v]);
         }
         if (low[u] == dfn[u])
         {
@@ -31,7 +31,7 @@ class Tarjan
 
     public:
     Tarjan (int n,int m) : 
-        n (n),m (m),vis (n + 1,0),head (n + 1,0),low (n + 1,0),dfn (n + 1,0),scc (n + 1,0),
+        n (n),m (m),head (n + 1,0),low (n + 1,0),dfn (n + 1,0),scc (n + 1,0),
         to (2 * m + 1,0),nxt (2 * m + 1,0) {cnt = times = scc_cnt = 0;}
     void add (int u,int v) // Note that the bidirectional edges
     {
