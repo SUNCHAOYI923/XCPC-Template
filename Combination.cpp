@@ -18,4 +18,9 @@ class COM
         if (y < 0 || y > x) return Z <T> (0);
         else return fac[x] * inv[x - y] * inv[y];   
     }
+    Z <T> arr (int x,int y)
+    {
+        if (y > x) return Z <T> (0);
+        else return fac[x] * inv[x - y];   
+    }
 };
