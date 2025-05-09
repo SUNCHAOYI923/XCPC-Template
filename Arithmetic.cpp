@@ -1,10 +1,10 @@
-template <typename T>
+template <typename T,int MOD = 1000000007>
 class Z
 {
-    T x;static const int MOD = 1e9 + 7;
-    Z <T> qpow (Z x,T y)
+    T x;
+    Z <T,MOD> qpow (Z x,T y)
     {
-        Z <T> res (1);
+        Z <T,MOD> res (1);
         while (y)
         {
             if (y & 1) res *= x;
