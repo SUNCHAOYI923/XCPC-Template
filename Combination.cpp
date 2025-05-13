@@ -15,12 +15,12 @@ class COM
     Z <T,MOD> inv_f (int x) {return inv[x];}
     Z <T,MOD> comb (int x,int y)
     {
-        if (y < 0 || y > x) return Z <T> (0);
+        if (y < 0 || y > x) return Z <T,MOD> (0);
         else return fac[x] * inv[x - y] * inv[y];   
     }
     Z <T,MOD> arr (int x,int y)
     {
-        if (y > x) return Z <T> (0);
+        if (y > x) return Z <T,MOD> (0);
         else return fac[x] * inv[x - y];   
     }
 };
