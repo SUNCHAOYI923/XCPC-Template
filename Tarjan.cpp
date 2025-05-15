@@ -42,6 +42,6 @@ class Tarjan
     {
         for (int i = 1;i <= n;++i)
             if (!dfn[i]) tarjan (i);
-        return vector <int> (scc.begin () + 1,scc.end ());
+        return scc;
     }
 };

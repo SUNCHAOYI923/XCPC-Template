@@ -34,6 +34,6 @@ class SPFA
                 }
             }
         }
-        return vector <ll> (dis.begin () + 1,dis.end ());
+        return dis;
     }
 };
