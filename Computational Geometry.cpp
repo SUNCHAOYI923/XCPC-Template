@@ -70,24 +70,26 @@ int in_Poly (vector <Point> P,Point A)
     }
     return cnt & 1;
 }
-vector <Point> convex_hull (vector <Point> P) // Non-strict convex hull
+vector <Point> convex_hull (vector <Point> P) // strict convex hull (<= 0)
 {
     int n = P.size ();
-    sort (P.begin (),P.end (),[](Point &x,Point &y) {return x.x == y.x ? x.y < y.y : x.x < y.x;});
+    sort (P.begin (),P.end (),[] (Point &x,Point &y) {return x.x == y.x ? x.y < y.y : x.x < y.x;});
     vector <Point> hull;
-    hull.resize (2 * n + 1);
+    vector <int> vis (n + 1,0),id (n + 1,0);
+    hull.resize (n + 1);
     int k = 0;
     for (int i = 0;i < n;++i) 
     {
-        while (k >= 1 && dcmp (cross (hull[k - 1] - hull[k - 2],P[i] - hull[k - 2])) < 0) --k;
-        hull[k++] = P[i];
+        while (k >= 2 && dcmp (cross (hull[k - 1] - hull[k - 2],P[i] - hull[k - 2])) <= 0) vis[id[--k]] = 0;
+        id[k] = i,hull[k++] = P[i];vis[i] = 1;
     }
     for (int i = n - 2,t = k;i >= 0;--i) 
     {
-        while (k > t && dcmp (cross (hull[k - 1] - hull[k - 2],P[i] - hull[k - 2])) < 0) --k;
-        hull[k++] = P[i];
+        if (vis[i]) continue;
+        while (k > t && dcmp (cross (hull[k - 1] - hull[k - 2],P[i] - hull[k - 2])) <= 0) vis[id[--k]] = 0;
+        id[k] = i,hull[k++] = P[i];vis[i] = 1;
     }
-    hull.resize (k - 1);
+    hull.resize (k - (k > 2));
     return hull;
 }
 double diameter (vector <Point> P)
