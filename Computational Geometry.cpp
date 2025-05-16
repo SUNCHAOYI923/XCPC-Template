@@ -25,16 +25,16 @@ bool on_line (Point P,Point A,Point B) {return dcmp (cross (P - A,B - A)) == 0;}
 bool on_seg (Point P,Point A,Point B) {return on_line (P,A,B) && dcmp (dot (P - A,P - B)) <= 0;} //judge whether on segment AB
 double dis_seg (Point P,Point A,Point B)
 {
-	if (dcmp (dot (B - A,P - A)) < 0) return dis (P,A);
-	if (dcmp (dot (A - B,P - B)) < 0) return dis (P,B);
-	return fabs (cross (P - A,P - B)) / dis (A,B);
+    if (dcmp (dot (B - A,P - A)) < 0) return dis (P,A);
+    if (dcmp (dot (A - B,P - B)) < 0) return dis (P,B);
+    return fabs (cross (P - A,P - B)) / dis (A,B);
 }
 Point inter (Point A,Point B,Point C,Point D) {return A + (B - A) * cross (C - A,D - C) / cross (B - A,D - C);}
 bool pd_ll_inter (Point A,Point B,Point C,Point D) {return dcmp (cross (B - A,D - C)) != 0;} // line - line
 bool pd_ls_inter (Point A,Point B,Point C,Point D) {return on_line (inter (A,B,C,D),C,D);} //The intersection of AB(line) and CD (line) is on the CD (seg).
 bool pd_ss_inter (Point A,Point B,Point C,Point D) // seg - seg
 {
-	double c1 = cross (B - A,C - A),c2 = cross (B - A,D - A);
+    double c1 = cross (B - A,C - A),c2 = cross (B - A,D - A);
     double d1 = cross (D - C,A - C),d2 = cross (D - C,B - C);
     if (dcmp (c1) * dcmp (c2) < 0 && dcmp (d1) * dcmp (d2) < 0) return true;
     if (dcmp(c1) == 0 && on_seg (C,A,B)) return true;
