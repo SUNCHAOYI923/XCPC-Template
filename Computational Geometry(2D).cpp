@@ -1,4 +1,5 @@
 using LD = long double;
+const LD pi = acos (-1.0);
 const LD eps = 1e-8;
 int dcmp (LD x) {return x < -eps ? -1 : (x > eps ? 1 : 0);}
 struct Point {LD x,y;Point (LD x = 0,LD y = 0) : x (x),y (y) {}};
@@ -71,22 +72,20 @@ vector <Point> convex_hull (vector <Point> P) // strict convex hull (<= 0)
 {
     int n = P.size ();
     sort (P.begin (),P.end (),[] (Point &x,Point &y) {return x.x == y.x ? x.y < y.y : x.x < y.x;});
-    vector <Point> hull;
-    vector <int> vis (n + 1,0),id (n + 1,0);
-    hull.resize (n + 1);
+     vector <Point> hull;
+    hull.resize (2 * n + 1);
     int k = 0;
     for (int i = 0;i < n;++i) 
     {
-        while (k >= 2 && dcmp (cross (hull[k - 1] - hull[k - 2],P[i] - hull[k - 2])) <= 0) vis[id[--k]] = 0;
-        id[k] = i,hull[k++] = P[i];vis[i] = 1;
+        while (k >= 2 && dcmp (cross (hull[k - 1] - hull[k - 2],P[i] - hull[k - 2])) <= 0) --k;
+        hull[k++] = P[i];
     }
     for (int i = n - 2,t = k;i >= 0;--i) 
     {
-        if (vis[i]) continue;
-        while (k > t && dcmp (cross (hull[k - 1] - hull[k - 2],P[i] - hull[k - 2])) <= 0) vis[id[--k]] = 0;
-        id[k] = i,hull[k++] = P[i];vis[i] = 1;
+        while (k > t && dcmp (cross (hull[k - 1] - hull[k - 2],P[i] - hull[k - 2])) <= 0) --k;
+        hull[k++] = P[i];
     }
-    hull.resize (k - (k > 2));
+    hull.resize (k - 1);
     return hull;
 }
 LD diameter (vector <Point> P)
@@ -125,8 +124,8 @@ pair <Point,Point> lc_inter (Point A,Point B,Circle C)
 {
     Point F = foot (C.O,A,B);LD d = dis (C.O,F); 
     Vector E = (B - A) / dis (A,B);
-    Point P1 = F + E * sqrt (C.r * C.r - d * d);
-    Point P2 = F - E * sqrt (C.r * C.r - d * d);
+    Point P1 = F - E * sqrt (C.r * C.r - d * d);
+    Point P2 = F + E * sqrt (C.r * C.r - d * d);
     return {P1,P2};
 }
 pair <Point,Point> cc_inter (Circle A,Circle B)
@@ -159,4 +158,67 @@ Circle triangle_circum (Point A,Point B,Point C)
     LD y = (Bx * (Cx * Cx + Cy * Cy) - Cx * (Bx * Bx + By * By)) / D + A.y;
     Point P (x,y);
     return Circle (P,dis (A,P));
+}
+vector <pair <Point,Point>> get_tangents (Circle A,Circle B)
+{
+    vector <pair <Point,Point>> tangents;
+    LD d = len (A.O - B.O),dif = A.r - B.r,sum = A.r + B.r;
+    if (dcmp (d - fabs (dif)) < 0) return tangents;
+    LD base = atan2 (B.O.y - A.O.y,B.O.x - A.O.x);
+    if (dcmp (d - fabs (dif)) == 0) 
+    {
+        tangents.push_back ({get_cir_p (A,base + (A.r < B.r ? pi : 0)),get_cir_p (A,base + (A.r < B.r ? pi : 0))});
+        return tangents;
+    }
+    LD theta = acos (dif / d);
+    tangents.push_back ({get_cir_p (A,base + theta),get_cir_p (B,base + theta)});
+    tangents.push_back ({get_cir_p (A,base - theta),get_cir_p (B,base - theta)});
+    if (dcmp (d - sum) == 0) tangents.push_back ({get_cir_p (A,base),get_cir_p (A,base)});
+    if (dcmp (d - sum) > 0)
+    {
+        theta = acos (sum / d);
+        tangents.push_back ({get_cir_p (A,base + theta),get_cir_p (B,base + theta + pi)});
+        tangents.push_back ({get_cir_p (A,base - theta),get_cir_p (B,base - theta + pi)});
+    }
+    return tangents;
+}
+LD tri_ploy_area (Point A,Point B,Circle C)
+{
+    Vector OA = A - C.O,OB = B - C.O;
+    LD S = cross (OA,OB),sign = dcmp (cross (OA,OB)) > 0 ? 1 : -1;
+    bool da = dcmp (len (OA) - C.r) < 0,db = dcmp (len (OB) - C.r) < 0;
+    if (dcmp (S) == 0) return 0;
+    if (da && db) return S * 0.5; // triangle
+    if (!da && !db) 
+    {
+        if (pd_lc_inter (A,B,C) == 1)// arc + triangle + arc
+        {
+            auto [P1,P2] = lc_inter (A,B,C);
+            Vector OP1 = P1 - C.O,OP2 = P2 - C.O;
+            if (dis (A,P1) > dis (A,P2)) swap (P1,P2);
+            return cross (OP1,OP2) * 0.5 + sign * 0.5 * C.r * C.r * (angle (OA,OP1) + angle (OB,OP2));
+        }
+        else return sign * 0.5 * C.r * C.r * angle (OA,OB); // arc
+    }
+    else // triangle + arc
+    {
+        auto [P1,P2] = lc_inter (A,B,C);
+        if (on_seg (P2,A,B)) swap (P1,P2); 
+        Vector OP1 = P1 - C.O;
+        if (dcmp (len (OA) - C.r) < 0) return cross (OA,OP1) * 0.5 + sign * 0.5 * C.r * C.r * angle (OP1,OB);
+        else return cross (OP1,OB) * 0.5 + sign * 0.5 * C.r * C.r * angle (OP1,OA);
+    }
+}
+LD cc_area (Circle C1,Circle C2)
+{
+    int op = pd_cc_inter (C1,C2);
+    if (op <= 1) return pi * min (C1.r,C2.r) * min (C1.r,C2.r);
+    else if (op == 4) return 0;
+    else
+    {
+        LD d = dis (C1.O,C2.O);
+        LD alpha = 2 * acos ((C1.r * C1.r - C2.r * C2.r + d * d) / (2 * C1.r * d));
+        LD beta = 2 * acos ((C2.r * C2.r - C1.r * C1.r + d * d) / (2 * C2.r * d));
+        return 0.5 * (C1.r * C1.r * (alpha - sin (alpha)) + C2.r * C2.r * (beta - sin (beta)));
+    }
 }
