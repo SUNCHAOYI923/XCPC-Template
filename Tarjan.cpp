@@ -28,7 +28,6 @@ class Tarjan
             }
         } 
     }
-
     public:
     Tarjan (int n,int m) : 
         n (n),m (m),head (n + 1,0),low (n + 1,0),dfn (n + 1,0),scc (n + 1,0),
@@ -38,7 +37,7 @@ class Tarjan
         to[++cnt] = v;nxt[cnt] = head[u];head[u] = cnt;
         to[++cnt] = u;nxt[cnt] = head[v];head[v] = cnt;
     }
-    vector <int> calc ()
+    auto calc ()
     {
         for (int i = 1;i <= n;++i)
             if (!dfn[i]) tarjan (i);

@@ -2,10 +2,7 @@ template <typename T>
 class MST
 {
     int n;T ans;
-    vector <int> vis;
-    vector <vector <int>> g;
-    vector <T> dis;
-    
+    vector <int> vis;vector <vector <int>> g;vector <T> dis;
     public :
     MST (int n) : n (n),vis (n + 1,0),g (n + 1,vector <int> (n + 1,INF)),dis (n + 1,INF) {dis[1] = ans = 0;vis[1] = 1;}
     void add (int u,int v,T w) {g[u][v] = g[v][u] = w;}

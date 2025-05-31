@@ -17,17 +17,17 @@ class SAM
         int p = lst,np = lst = t.size ();
         t.push_back (node (t[p].len + 1));
         for (;p&&!t[p].ch[c];p = t[p].fa) t[p].ch[c] = np;
-         if (!p) t[np].fa = 1;
-         else
-         {
-             int v = t[p].ch[c];
-             if (t[v].len == t[p].len + 1) t[np].fa = v;
-             else
-             {
-                 int nv = t.size ();t.push_back (t[v]);
-                 t[nv].len = t[p].len + 1;
-                 for (;p && t[p].ch[c] == v;p = t[p].fa) t[p].ch[c] = nv;
-                 t[np].fa = t[v].fa = nv;
+        if (!p) t[np].fa = 1;
+        else
+        {
+            int v = t[p].ch[c];
+            if (t[v].len == t[p].len + 1) t[np].fa = v;
+            else
+            {
+                int nv = t.size ();t.push_back (t[v]);
+                t[nv].len = t[p].len + 1;
+                for (;p && t[p].ch[c] == v;p = t[p].fa) t[p].ch[c] = nv;
+                t[np].fa = t[v].fa = nv;
             }
         }
     }

@@ -14,7 +14,6 @@ class Diameter
             dfs (v,u);
         }
     }
-
     public:
     Diameter (int n) : n(n),ve(n + 1) {}
     void add (int u,int v,T w = 1) {ve[u].push_back ({v,w});ve[v].push_back ({u,w});}

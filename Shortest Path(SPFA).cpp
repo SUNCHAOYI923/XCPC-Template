@@ -3,7 +3,6 @@ class SPFA
     int n,m,cnt;
     vector <int> head,to,nxt,val,vis,times;
     vector <ll> dis;
-
     public:
     SPFA (int n,int m) : 
         n (n),m (m),times (n + 1,0),vis (n + 1,0),head (n + 1,0),dis (n + 1,INF),
@@ -13,7 +12,7 @@ class SPFA
         to[++cnt] = v;val[cnt] = w;nxt[cnt] = head[u];head[u] = cnt;
         to[++cnt] = u;val[cnt] = w;nxt[cnt] = head[v];head[v] = cnt;
     }
-    vector <ll> calc (int s) 
+    auto calc (int s) 
     {
         queue <int> q;
         for (int i = 1;i <= n;++i) vis[i] = 0,dis[i] = INF;

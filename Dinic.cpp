@@ -36,7 +36,6 @@ class Dinic
         if (ans < flow) dep[u] = -1;
         return ans;
     }
-    
     public :
     Dinic (int n,int m,int s,int t) :
         n (n),m (m),s (s),t (t),

@@ -2,12 +2,8 @@ template <typename T>
 class MST
 {
     int n,m,e_cnt,cnt;T ans;
-    struct node
-    {
-        int u,v;T w;
-    };
-    vector <int> fa;
-    vector <node> g;
+    struct node {int u,v;T w;};
+    vector <int> fa;vector <node> g;
     public:
     MST (int n,int m) : n (n),m(m),fa (n + 1,0),g (m + 1) {cnt = e_cnt = ans = 0;}
     void add (int u,int v,int w) {g[++e_cnt].u = u,g[e_cnt].v = v,g[e_cnt].w = w;}

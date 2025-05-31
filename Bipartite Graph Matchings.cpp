@@ -13,7 +13,6 @@ class Matching
         }
         return false;
     }
-    
     public:
     Matching (int l,int r) : l (l),r (r),vis (r + 1,0),op (r + 1,0),ve (l + 1) {}
     void add (int u,int v) {ve[u].push_back (v);}

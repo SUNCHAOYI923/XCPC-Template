@@ -68,11 +68,11 @@ int in_Poly (vector <Point> P,Point A)
     }
     return cnt & 1;
 }
-vector <Point> convex_hull (vector <Point> P) // strict convex hull (<= 0)
+auto convex_hull (vector <Point> P) // strict convex hull (<= 0)
 {
     int n = P.size ();
     sort (P.begin (),P.end (),[] (Point &x,Point &y) {return x.x == y.x ? x.y < y.y : x.x < y.x;});
-     vector <Point> hull;
+    vector <Point> hull;
     hull.resize (2 * n + 1);
     int k = 0;
     for (int i = 0;i < n;++i) 
@@ -120,7 +120,7 @@ int pd_cc_inter (Circle A,Circle B) // the number of tagent lines
     if (dcmp (fabs (A.r - B.r) - d) > 0) return 0; // one circle inside the other
     return 2; // intersection
 }
-pair <Point,Point> lc_inter (Point A,Point B,Circle C)
+auto lc_inter (Point A,Point B,Circle C)
 {
     Point F = foot (C.O,A,B);LD d = dis (C.O,F); 
     Vector E = (B - A) / dis (A,B);
@@ -128,7 +128,7 @@ pair <Point,Point> lc_inter (Point A,Point B,Circle C)
     Point P2 = F + E * sqrt (C.r * C.r - d * d);
     return {P1,P2};
 }
-pair <Point,Point> cc_inter (Circle A,Circle B)
+auto cc_inter (Circle A,Circle B)
 {
     Vector k = B.O - A.O;
     LD d = len (k);
@@ -136,7 +136,7 @@ pair <Point,Point> cc_inter (Circle A,Circle B)
     Point P1 = get_cir_p (A,alpha - beta),P2 = get_cir_p (A,alpha + beta);
     return {P1,P2};
 }
-pair <Point, Point> tan_cir (Point P,Circle C)
+auto tan_cir (Point P,Circle C)
 {
     LD d = len (C.O - P),theta = asin (C.r / d);
     Vector E = (C.O - P) / d;
@@ -159,7 +159,7 @@ Circle triangle_circum (Point A,Point B,Point C)
     Point P (x,y);
     return Circle (P,dis (A,P));
 }
-vector <pair <Point,Point>> get_tangents (Circle A,Circle B)
+auto get_tangents (Circle A,Circle B)
 {
     vector <pair <Point,Point>> tangents;
     LD d = len (A.O - B.O),dif = A.r - B.r,sum = A.r + B.r;

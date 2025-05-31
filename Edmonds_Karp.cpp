@@ -25,7 +25,6 @@ class EK
         }
         return 0;
     }
-    
     public :
     EK (int n,int m,int s,int t) : 
         n (n),m (m),s (s),t (t),

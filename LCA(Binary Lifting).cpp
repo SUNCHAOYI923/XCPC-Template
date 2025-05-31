@@ -4,7 +4,6 @@ class LCA
     int n;
     vector <int> dep;
     vector <vector <int>> f,ve;
-
     public:
     LCA (int n) : n (n),ve (n + 1),dep (n + 1),f (n + 1,vector <int> (lg + 1,0)) {}
     void add (int u,int v) {ve[u].push_back (v);ve[v].push_back (u);}
