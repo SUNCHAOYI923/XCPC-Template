@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 #define init(x) memset (x,0,sizeof (x))
-#define ll long long
-#define ull unsigned long long
 #define INF 0x3f3f3f3f
 #define pii pair <int,int>
+using i64 = long long;
+using u64 = unsigned long long;
+using LD = long double;
 using namespace std;
 const int MAX = 1e5 + 5;
 const int MOD = 1e9 + 7;

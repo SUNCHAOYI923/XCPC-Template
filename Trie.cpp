@@ -4,11 +4,11 @@ struct Trie
     vector <vector <int>> ch;
     vector <int> vis;
     public :
-    Trie (int n,int m) : n (n),m (m),ch (m,vector <int> (26,0)),vis (n) {cnt = 0;}
+    Trie (int n,int m) : n (n),m (m),ch (m,vector <int> (26,0)),vis (m) {cnt = 0;}
     void insert (char *s)
     {
-        int u = 1,len = strlen (s + 1);
-        for (int i = 1;i <= len;++i) 
+        int u = 0,len = strlen (s);
+        for (int i = 0;i < len;++i) m
         {
             int c = s[i] - 'a';
             if (!ch[u][c]) ch[u][c] = ++cnt;
@@ -18,8 +18,8 @@ struct Trie
     }
     int query (char *s) 
     {  
-        int u = 1,len = strlen (s + 1);
-        for (int i = 1;i <= len;++i) 
+        int u = 0,len = strlen (s);
+        for (int i = 0;i < len;++i) 
         {
             int c = s[i] - 'a';
             if (!ch[u][c]) return 0;
