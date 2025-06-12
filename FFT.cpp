@@ -21,7 +21,7 @@ class FFT
                 }
             }
         }
-        if (op == -1) {for (cd &x : a) x /= n;}
+        if (op == -1) {for (auto &x : a) x /= n;}
     }
     public :
     vector <double> conv (vector <cd> a,vector <cd> b)

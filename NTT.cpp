@@ -37,7 +37,7 @@ class NTT
         if (op == -1)
         {
             int inv_n = qpow (n,P - 2);
-            for (int &x : a) x = 1ll * x * inv_n % P;
+            for (auto &x : a) x = 1ll * x * inv_n % P;
         }
     }
     public :
