@@ -17,7 +17,7 @@ class Z
     Z () : x(0) {}
     Z (T x) : x (x) {}
     T get () {return x;}
-    Z & operator = (T o) {x = o;return *this;}
+    Z & operator = (T o) {x = o % MOD;return *this;}
     Z & operator += (Z o) {x = (x + o.x + MOD) % MOD;return *this;}
     Z & operator -= (Z o) {x = (x - o.x + MOD) % MOD;return *this;}
     Z & operator *= (Z o) {x = 1ll * o.x * x % MOD;return *this;}
