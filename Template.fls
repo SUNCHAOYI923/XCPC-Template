@@ -170,6 +170,61 @@ INPUT d:/texlive/2025/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/float/float.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/float/float.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT d:/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT d:/texlive/2025/texmf-dist/tex/latex/url/url.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/url/url.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT d:/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT d:/texlive/2025/texmf-dist/tex/latex/atveryend/atveryend.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT d:/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT d:/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -210,6 +265,15 @@ INPUT d:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT d:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT d:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT d:/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
+INPUT ./Template.out
+INPUT ./Template.out
+INPUT Template.out
+INPUT Template.out
+OUTPUT Template.pdf
+INPUT ./Template.out
+INPUT ./Template.out
+OUTPUT Template.out
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxr.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxr.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxr.tfm
@@ -288,7 +352,6 @@ INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxsyc.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxexa.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxexa.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxexa.tfm
-OUTPUT Template.pdf
 INPUT d:/texlive/2025/texmf-dist/fonts/vf/public/pxfonts/pxr.vf
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/rpxpplr.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/rpxr.tfm
@@ -324,6 +387,7 @@ INPUT Run.bash
 INPUT ./run.ps1
 INPUT ./run.ps1
 INPUT run.ps1
+INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxr.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/vf/public/pxfonts/pxb.vf
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/rpxpplb.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/rpxb.tfm
@@ -333,7 +397,6 @@ INPUT Diameter.cpp
 INPUT ./Centroid.cpp
 INPUT ./Centroid.cpp
 INPUT Centroid.cpp
-INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/pxfonts/pxr.tfm
 INPUT ./Minimum Spanning Tree(Prim).cpp
 INPUT ./Minimum Spanning Tree(Prim).cpp
 INPUT Minimum Spanning Tree(Prim).cpp
@@ -352,6 +415,9 @@ INPUT Shortest Path(dijstrka).cpp
 INPUT ./Shortest Path(SPFA).cpp
 INPUT ./Shortest Path(SPFA).cpp
 INPUT Shortest Path(SPFA).cpp
+INPUT ./DCC.cpp
+INPUT ./DCC.cpp
+INPUT DCC.cpp
 INPUT ./Tarjan.cpp
 INPUT ./Tarjan.cpp
 INPUT Tarjan.cpp
@@ -367,15 +433,45 @@ INPUT Dinic.cpp
 INPUT ./Linear-Basis.cpp
 INPUT ./Linear-Basis.cpp
 INPUT Linear-Basis.cpp
+INPUT ./Subset.cpp
+INPUT ./Subset.cpp
+INPUT Subset.cpp
 INPUT ./Arithmetic.cpp
 INPUT ./Arithmetic.cpp
 INPUT Arithmetic.cpp
 INPUT ./Combination.cpp
 INPUT ./Combination.cpp
 INPUT Combination.cpp
+INPUT ./Primes.cpp
+INPUT ./Primes.cpp
+INPUT Primes.cpp
+INPUT ./exgcd.cpp
+INPUT ./exgcd.cpp
+INPUT exgcd.cpp
+INPUT ./CRT.cpp
+INPUT ./CRT.cpp
+INPUT CRT.cpp
+INPUT ./Gaussian.cpp
+INPUT ./Gaussian.cpp
+INPUT Gaussian.cpp
+INPUT ./FFT.cpp
+INPUT ./FFT.cpp
+INPUT FFT.cpp
+INPUT ./NTT.cpp
+INPUT ./NTT.cpp
+INPUT NTT.cpp
 INPUT ./Computational Geometry(2D).cpp
 INPUT ./Computational Geometry(2D).cpp
 INPUT Computational Geometry(2D).cpp
+INPUT ./Hash.cpp
+INPUT ./Hash.cpp
+INPUT Hash.cpp
+INPUT ./KMP.cpp
+INPUT ./KMP.cpp
+INPUT KMP.cpp
+INPUT ./Manacher.cpp
+INPUT ./Manacher.cpp
+INPUT Manacher.cpp
 INPUT ./Trie.cpp
 INPUT ./Trie.cpp
 INPUT Trie.cpp
@@ -386,6 +482,8 @@ INPUT ./SAM.cpp
 INPUT ./SAM.cpp
 INPUT SAM.cpp
 INPUT Template.aux
+INPUT ./Template.out
+INPUT ./Template.out
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/pxfonts/rpxb.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txbtt.pfb
