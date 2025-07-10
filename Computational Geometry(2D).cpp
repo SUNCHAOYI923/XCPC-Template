@@ -120,7 +120,7 @@ int pd_cc_inter (Circle A,Circle B) // the number of tagent lines
     if (dcmp (fabs (A.r - B.r) - d) > 0) return 0; // one circle inside the other
     return 2; // intersection
 }
-auto lc_inter (Point A,Point B,Circle C)
+pair <Point,Point> lc_inter (Point A,Point B,Circle C)
 {
     Point F = foot (C.O,A,B);LD d = dis (C.O,F); 
     Vector E = (B - A) / dis (A,B);
@@ -128,15 +128,15 @@ auto lc_inter (Point A,Point B,Circle C)
     Point P2 = F + E * sqrt (C.r * C.r - d * d);
     return {P1,P2};
 }
-auto cc_inter (Circle A,Circle B)
+pair <Point,Point> cc_inter (Circle A,Circle B)
 {
     Vector k = B.O - A.O;
     LD d = len (k);
     LD alpha = atan2 (k.y,k.x),beta = acos ((A.r * A.r + d * d - B.r * B.r) / (2 * A.r * d));
     Point P1 = get_cir_p (A,alpha - beta),P2 = get_cir_p (A,alpha + beta);
-    return {P1,P2};
+    return  {P1,P2};
 }
-auto tan_cir (Point P,Circle C)
+pair <Point,Point> tan_cir (Point P,Circle C)
 {
     LD d = len (C.O - P),theta = asin (C.r / d);
     Vector E = (C.O - P) / d;
