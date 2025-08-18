@@ -487,6 +487,9 @@ INPUT Trie.cpp
 INPUT ./01-Trie.cpp
 INPUT ./01-Trie.cpp
 INPUT 01-Trie.cpp
+INPUT ./AC.cpp
+INPUT ./AC.cpp
+INPUT AC.cpp
 INPUT ./SAM.cpp
 INPUT ./SAM.cpp
 INPUT SAM.cpp
