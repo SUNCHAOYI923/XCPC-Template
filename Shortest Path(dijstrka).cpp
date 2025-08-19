@@ -1,8 +1,8 @@
 class dijkstra
 {
     int n,m,cnt;
-    vector <int> head,to,nxt,val,vis;
-    vector <ll> dis;
+    vector <int> head,to,nxt,vis;
+    vector <ll> dis,val;
     public:
     dijkstra (int n,int m) : 
         n (n),m (m),vis (n + 1,0),head (n + 1,0),dis (n + 1,INF),
@@ -14,7 +14,7 @@ class dijkstra
     }
     auto calc (int s)
     {
-        priority_queue <pii> q;
+        priority_queue <pair <ll,int>> q;
         for (int i = 1;i <= n;++i) vis[i] = 0,dis[i] = INF;
         q.push ({0,s});
         dis[s] = 0;
