@@ -5,7 +5,7 @@ class dijkstra
     vector <ll> dis,val;
     public:
     dijkstra (int n,int m) : 
-        n (n),m (m),vis (n + 1,0),head (n + 1,0),dis (n + 1,INF),
+        n (n),m (m),vis (n + 1,0),head (n + 1,0),dis (n + 1,1e18),
         to (2 * m + 1,0),nxt (2 * m + 1,0),val (2 * m + 1,0) {cnt = 0;}
     void add (int u,int v,int w)
     {

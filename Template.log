@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.10)  19 AUG 2025 10:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.10)  19 AUG 2025 10:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -773,15 +773,15 @@ Package rerunfilecheck Info: File `Template.out' has not changed.
 (rerunfilecheck)             Checksum: EA0078E654FFB21A36B2C8B00A7B06E7;6018.
  ) 
 Here is how much of TeX's memory you used:
- 26652 strings out of 473190
- 464427 string characters out of 5719979
- 1745479 words of memory out of 5000000
- 47942 multiletter control sequences out of 15000+600000
+ 26654 strings out of 473190
+ 464443 string characters out of 5719979
+ 1744479 words of memory out of 5000000
+ 47944 multiletter control sequences out of 15000+600000
  586224 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,6n,107p,506b,1993s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2025/texmf-dist/fonts/type1/public/pxfonts/rpxb.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txbtt.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txtt.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txtt.pfb><d:/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><d:/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on Template.pdf (29 pages, 173195 bytes).
+Output written on Template.pdf (29 pages, 173217 bytes).
 PDF statistics:
  2110 PDF objects out of 2487 (max. 8388607)
  2044 compressed objects within 21 object streams

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1755572083.0958 "d:/个人文件/编程/C++/XCPC/Template/Template.tex" "Template.pdf" "Template" 1755572089.92237 0
+["pdflatex"] 1755572254.92781 "d:/个人文件/编程/C++/XCPC/Template/Template.tex" "Template.pdf" "Template" 1755572259.31775 0
   "01-Trie.cpp" 1746078511 1159 568faf0acd509da8c9a5cef6c1ddff21 ""
   "AC.cpp" 1755523356 1222 70ae9053bb258525adf41820d8a60241 ""
   "Arithmetic.cpp" 1749892257 1409 12d824a389c0d165ba670618f9d722a0 ""
@@ -32,13 +32,13 @@
   "SAM.cpp" 1748674190 1190 3685e7baffb3e940ba850478b98eea12 ""
   "ST.cpp" 1755235395 435 8b1ecb8618f15377b75d116852418c45 ""
   "Shortest Path(SPFA).cpp" 1748674232 1206 3ba9bf7e457571dcda36f70b20b909d7 ""
-  "Shortest Path(dijstrka).cpp" 1755572077 1123 f0b8a07428c212481653a04097ef5aec ""
+  "Shortest Path(dijstrka).cpp" 1755572248 1124 d16ca241f8bb008ec623180b22d18f78 ""
   "Subset.cpp" 1749570123 75 9f1bf7498593199569fd3aabee840873 ""
   "Tarjan.cpp" 1748674228 1257 bd91857f98d31879061815eed87a8724 ""
-  "Template.aux" 1755572089 10275 aeb514911d6b2df66376d135694cec3c "pdflatex"
-  "Template.out" 1755572089 6018 ea0078e654ffb21a36b2c8b00a7b06e7 "pdflatex"
-  "Template.tex" 1755522052 3728 459aaf44b180d450ccc11d11cb4c6d40 ""
-  "Template.toc" 1755572089 4048 5d08ce264b1d86a5cf068ae7aa35ca73 "pdflatex"
+  "Template.aux" 1755572259 10275 aeb514911d6b2df66376d135694cec3c "pdflatex"
+  "Template.out" 1755572259 6018 ea0078e654ffb21a36b2c8b00a7b06e7 "pdflatex"
+  "Template.tex" 1755572252 3728 459aaf44b180d450ccc11d11cb4c6d40 ""
+  "Template.toc" 1755572259 4048 5d08ce264b1d86a5cf068ae7aa35ca73 "pdflatex"
   "Topological Sorting.cpp" 1744860791 688 71e26a49d6effd0f3bbd73a3f7c366a2 ""
   "Trie.cpp" 1755522846 721 403f00303f38b16d7f196527017ac793 ""
   "d:/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1744216016 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -209,7 +209,7 @@
   "d:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1744218596 5512713 e2e6a6c037ab0e435732e63fdc2d5cc7 ""
   "d:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1744218702 3346138 8937b24198825a745563dfc4d5f73ef8 ""
   "d:/texlive/2025/texmf.cnf" 1744218581 713 e69b156964470283e0530f5060668171 ""
-  "d:/个人文件/编程/C++/XCPC/Template/Template.tex" 1755522052 3728 459aaf44b180d450ccc11d11cb4c6d40 ""
+  "d:/个人文件/编程/C++/XCPC/Template/Template.tex" 1755572252 3728 459aaf44b180d450ccc11d11cb4c6d40 ""
   (generated)
   "Template.aux"
   "Template.log"
