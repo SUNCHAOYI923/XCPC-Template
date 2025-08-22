@@ -12,10 +12,10 @@ class Tarjan
             int v = to[i];
             if (!dfn[v])
             {
-                tarjan (v);
+                tarjan (v,i);
                 low[u] = min (low[u],low[v]);
             }
-            else if (!scc[v]) low[u] = min (low[u],dfn[v]);
+            else if (i != (la ^ 1) && !scc[v]) low[u] = min (low[u],dfn[v]);
         }
         if (low[u] == dfn[u])
         {
@@ -30,8 +30,8 @@ class Tarjan
     }
     public:
     Tarjan (int n,int m) : 
-        n (n),m (m),head (n + 1,0),low (n + 1,0),dfn (n + 1,0),scc (n + 1,0),
-        to (2 * m + 1,0),nxt (2 * m + 1,0) {cnt = times = scc_cnt = 0;}
+        n (n),m (m),head (n + 2,0),low (n + 1,0),dfn (n + 1,0),scc (n + 1,0),
+        to (2 * m + 2,0),nxt (2 * m + 2,0) {cnt = 1;times = scc_cnt = 0;}
     void add (int u,int v) // Note that the bidirectional edges
     {
         to[++cnt] = v;nxt[cnt] = head[u];head[u] = cnt;
@@ -40,7 +40,7 @@ class Tarjan
     auto calc ()
     {
         for (int i = 1;i <= n;++i)
-            if (!dfn[i]) tarjan (i);
+            if (!dfn[i]) tarjan (i,-1);
         return scc;
     }
 };
