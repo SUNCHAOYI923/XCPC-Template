@@ -1,7 +1,7 @@
 class NTT
 {
     vector <int> rev;int n = 1;
-    const int P = 1004535809;//998244353
+    const int P = 1004535809;//998244353 469762049
     const int G = 3;
     int qpow (int x,int y)
     {
