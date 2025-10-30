@@ -39,11 +39,15 @@ class AC
         return res;
     }
 };
-/*  s :
+/*
+s :
 a
 aa
 aa
 aaa
+
 t :
 aaaa 
-ans : 4  */
+
+ans : 4  
+*/
