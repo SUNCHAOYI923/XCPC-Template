@@ -106,7 +106,7 @@ bool in_cir (Circle C,Point P) {return dcmp (len (P - C.O) - C.r) <= 0;}
 Point get_cir_p (Circle C,LD theta) {return {C.O.x + C.r * cos (theta),C.O.y + C.r * sin (theta)};}
 int pd_lc_inter (Point A,Point B,Circle C) 
 {
-    double d = dis_seg (C.O,A,B);
+    LD d = dis_seg (C.O,A,B);
     if (dcmp (d - C.r) == 0) return 0; // tangent
     if (dcmp (d - C.r) > 0) return -1; // separation
     return 1; // intersection
