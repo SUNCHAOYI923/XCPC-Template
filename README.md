@@ -1,0 +1,1 @@
+This is SUNCHAOYI's template for XCPC.
