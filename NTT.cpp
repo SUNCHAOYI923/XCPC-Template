@@ -27,7 +27,7 @@ class NTT
                 int w = 1;
                 for(int j = 0;j < len;++j) 
                 {
-                    int u = a[i + j],v = 1ll * a[i + j + len] * w % P;
+                    int u = a[i + j] % P,v = 1ll * a[i + j + len] * w % P;
                     a[i + j] = (0ll + u + v) % P;
                     a[i + j + len] = (0ll + u - v + P) % P;
                     w = 1ll * w * wn % P;
