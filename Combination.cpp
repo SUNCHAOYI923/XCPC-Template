@@ -1,4 +1,4 @@
-template <typename T,int MOD = 1000000007>
+    template <typename T,int MOD = 1000000007>
 class COM
 {
     int n;
