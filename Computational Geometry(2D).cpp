@@ -101,6 +101,22 @@ LD diameter (vector <Point> P)
     }
     return res;
 }
+vector <Point> minkowski (vector <Point> &vecA,vector <Point> &vecB)
+{
+    int n = vecA.size (),m = vecB.size ();
+    vector <Point> A (n),B (m),C {vecA[0] + vecB[0]};
+    for (int i = 0;i < n;++i) A[i] = vecA[(i + 1) % n] - vecA[i];
+    for (int i = 0;i < m;++i) B[i] = vecB[(i + 1) % m] - vecB[i];
+    int posa = 0,posb = 0;
+    while (posa < n || posb < m)
+    {
+        if (posa == n) C.push_back (C.back () + B[posb++]);
+        else if (posb == m) C.push_back (C.back () + A[posa++]);
+        else if (dcmp (cross (A[posa],B[posb])) >= 0) C.push_back (C.back () + A[posa++]);
+        else C.push_back (C.back () + B[posb++]);
+    }
+    return convex_hull (C);
+}
 
 bool in_cir (Circle C,Point P) {return dcmp (len (P - C.O) - C.r) <= 0;}
 Point get_cir_p (Circle C,LD theta) {return {C.O.x + C.r * cos (theta),C.O.y + C.r * sin (theta)};}
