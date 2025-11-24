@@ -42,21 +42,21 @@ bool pd_ss_inter (Point A,Point B,Point C,Point D) // seg - seg
     return false;
 }
 
-LD area (vector <Point> P)
+LD area (vector <Point> &P)
 {
     int n = P.size ();
     LD res = 0;
     for (int i = 0;i < n;++i) res += cross (P[i],P[(i + 1) % n]);
     return res / 2.0;
 }
-bool is_convex (vector <Point> P)
+bool is_convex (vector <Point> &P)
 {
     int n = P.size ();
     for(int i = 0;i < n - 1;++i) 
         if (dcmp (cross (P[i + 1] - P[i],P[(i + 2) % n] - P[i])) < 0) return false;
     return true;
 }
-int in_Poly (vector <Point> P,Point A)
+int in_Poly (vector <Point> &P,Point A) // O (n) for any polygons
 {
     int cnt = 0,n = P.size ();
     for (int i = 0;i < n;++i)
@@ -68,7 +68,23 @@ int in_Poly (vector <Point> P,Point A)
     }
     return cnt & 1;
 }
-auto convex_hull (vector <Point> P) // strict convex hull (<= 0)
+int in_convex_Poly (vector <Point> &P,Point A) // O (log n) only for convex polygons
+{
+    int n = P.size ();
+    if (on_seg (A,P[0],P[1]) || on_seg (A,P[0],P[n - 1])) return 2;
+    if (dcmp (cross (P[n - 1] - P[0],A - P[0])) > 0 || dcmp (cross (P[1] - P[0],A - P[0])) < 0) return 0;
+    int l = 1,r = n - 2,res = -1;
+    while (l <= r)
+    {
+        int mid = (l + r) >> 1;
+        if (dcmp (cross (P[mid] - P[0],A - P[0])) >= 0) res = mid,l = mid + 1;
+        else r = mid - 1;
+    }
+    if (on_seg (A,P[res],P[res + 1])) return 2;
+    if (dcmp (cross (P[res + 1] - P[res],A - P[res])) < 0) return 0;
+    return 1;
+}
+auto convex_hull (vector <Point> &P) // strict convex hull (<= 0)
 {
     int n = P.size ();
     sort (P.begin (),P.end (),[] (Point &x,Point &y) {return x.x == y.x ? x.y < y.y : x.x < y.x;});
@@ -88,7 +104,7 @@ auto convex_hull (vector <Point> P) // strict convex hull (<= 0)
     hull.resize (k - 1);
     return hull;
 }
-LD diameter (vector <Point> P)
+LD diameter (vector <Point> &P)
 {
     int n = P.size ();
     if (n <= 1) return 0;
