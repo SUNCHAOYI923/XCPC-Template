@@ -8,7 +8,9 @@ typedef Point Vector;
 Vector operator + (Vector A,Vector B) {return Vector (A.x + B.x,A.y + B.y);}
 Vector operator - (Vector A,Vector B) {return Vector (A.x - B.x,A.y - B.y);}
 Vector operator * (Vector A,LD k) {return Vector (A.x * k,A.y * k);} 
-Vector operator / (Vector A,LD k) {return Vector (A.x / k,A.y / k);} 
+Vector operator / (Vector A,LD k) {return Vector (A.x / k,A.y / k);}
+bool operator == (Vector A,Vector B) {return dcmp (A.x - B.x) == 0 && dcmp (A.y - B.y) == 0;}
+bool operator != (Vector A,Vector B) {return !(A == B);}
 
 LD dot (Vector A,Vector B) {return A.x * B.x + A.y * B.y;} 
 LD dis (Point A,Point B) {return sqrt ((A.x - B.x) * (A.x - B.x) + (A.y - B.y) * (A.y - B.y));} 
@@ -116,6 +118,36 @@ LD diameter (vector <Point> &P)
         res = max (res,max (len (P[j] - P[i]),len (P[j] - P[(i + 1) % n])));
     }
     return res;
+}
+template <typename Line = pair <Point, Point>>
+LD half_plane (vector <Line> &Vec)
+{
+    int n = Vec.size ();
+    auto get_angle = [&] (Line line) -> LD {return atan2 (line.second.y - line.first.y,line.second.x - line.first.x);};
+    sort (Vec.begin (),Vec.end (),[&] (Line A,Line B) 
+    {
+        LD angA = get_angle (A),angB = get_angle (B);
+        return fabs (angA - angB) > eps ? angA < angB : cross (A.second - A.first,B.second - A.first) < 0;
+    });
+    int h = 1,t = 0;
+    auto check = [&] (Line x,Line y,Line z) -> bool
+    {
+        Point P = inter_line (y.first,y.second,z.first,z.second);
+        return dcmp (cross (x.second - x.first,P - x.first)) < 0;
+    };
+    vector <Line> q (n + 10);q[++t] = Vec[0];
+    for (int i = 1;i < n;++i)
+    {
+        if (get_angle (Vec[i]) - get_angle (Vec[i - 1]) < eps) continue;
+        while (h < t && check (Vec[i],q[t],q[t - 1])) --t;
+        while (h < t && check (Vec[i],q[h],q[h + 1])) ++h;
+        q[++t] = Vec[i];
+    }
+    while (h < t && check (q[h],q[t],q[t - 1])) --t;
+    q[++t] = q[h];
+    vector <Point> p;
+    for (int i = h;i < t;++i) p.push_back (inter_line (q[i].first,q[i].second,q[i + 1].first,q[i + 1].second));
+    return area (p);
 }
 vector <Point> minkowski (vector <Point> &vecA,vector <Point> &vecB)
 {
