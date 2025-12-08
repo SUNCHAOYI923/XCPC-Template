@@ -1,8 +1,9 @@
 class NTT
 {
     vector <int> rev;int n = 1;
-    const int P = 1004535809;//998244353 469762049 50000000001507329LL
+    const int P = 1004535809;//998244353 469762049 50000000001507329LL 4179340454199820289
     const int G = 3;
+    //1945555039024054273 for G = 5
     int qpow (int x,int y)
     {
         int res = 1;
