@@ -43,6 +43,7 @@ bool pd_ss_inter (Point A,Point B,Point C,Point D) // seg - seg
     if (dcmp(d2) == 0 && on_seg (B,C,D)) return true;
     return false;
 }
+bool SameSide (Point A,Point B,Point C,Point D) {return cross (A - C,D - C) * cross (D - C,B - C) < 0;} // Point A,B  Line C,D
 
 LD area (vector <Point> &P)
 {
