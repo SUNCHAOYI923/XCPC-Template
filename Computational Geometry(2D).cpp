@@ -17,22 +17,22 @@ LD dis (Point A,Point B) {return sqrt ((A.x - B.x) * (A.x - B.x) + (A.y - B.y) *
 LD cross (Vector A,Vector B) {return A.x * B.y - A.y * B.x;} // A -> B counter-clockwise if cross (A,B) > 0
 LD len (Point A)  {return sqrt (A.x * A.x + A.y * A.y);}
 LD angle (Vector A,Vector B) {return acos (dot (A,B) / (len (A) * len (B)));}
-Vector proj (Vector A,Vector B) {return A * (dot (A,B) / dot (A,A));} //project onto A
-Point foot (Point P,Point A,Point B) {Vector AP = P - A,AB = B - A;return A + proj (AB,AP);} //foot
-Point reflect (Point P,Point A,Point B) {Point F = foot (P,A,B);return F * 2 - P;} //symmetry point
-Point rotate (Point P,LD theta) {return (Point){P.x * cos (theta) - P.y * sin (theta),P.x * sin (theta) + P.y * cos (theta)};}
-bool on_line (Point P,Point A,Point B) {return dcmp (cross (P - A,B - A)) == 0;}
-bool on_seg (Point P,Point A,Point B) {return on_line (P,A,B) && dcmp (dot (P - A,P - B)) <= 0;} //judge whether on segment AB
-LD dis_seg (Point P,Point A,Point B)
+Vector proj (Vector A,Vector B) {return A * (dot (A,B) / dot (A,A));} // project onto A
+Point foot (Point P,Point A,Point B) {Vector AP = P - A,AB = B - A;return A + proj (AB,AP);} // foot
+Point reflect (Point P,Point A,Point B) {Point F = foot (P,A,B);return F * 2 - P;} // symmetry point
+Point rotate (Point P,LD theta) {return (Point){P.x * cos (theta) - P.y * sin (theta),P.x * sin (theta) + P.y * cos (theta)};} // counterclockwise 
+bool on_line (Point P,Point A,Point B) {return dcmp (cross (P - A,B - A)) == 0;} // judge whether on line AB
+bool on_seg (Point P,Point A,Point B) {return on_line (P,A,B) && dcmp (dot (P - A,P - B)) <= 0;} // judge whether on segment AB
+LD dis_seg (Point P,Point A,Point B) // the distance from point P to segment AB.
 {
     if (dcmp (dot (B - A,P - A)) < 0) return dis (P,A);
     if (dcmp (dot (A - B,P - B)) < 0) return dis (P,B);
     return fabs (cross (P - A,P - B)) / dis (A,B);
 }
-Point inter_line (Point A,Point B,Point C,Point D) {return A + (B - A) * cross (C - A,D - C) / cross (B - A,D - C);}
-bool pd_ll_inter (Point A,Point B,Point C,Point D) {return dcmp (cross (B - A,D - C)) != 0;} // line - line
-bool pd_ls_inter (Point A,Point B,Point C,Point D) {return on_line (inter_line (A,B,C,D),C,D);} //The intersection of AB(line) and CD (line) is on the CD (seg).
-bool pd_ss_inter (Point A,Point B,Point C,Point D) // seg - seg
+Point ll_inter_pt (Point A,Point B,Point C,Point D) {return A + (B - A) * cross (C - A,D - C) / cross (B - A,D - C);}
+bool chk_ll_inter (Point A,Point B,Point C,Point D) {return dcmp (cross (B - A,D - C)) != 0;} // line - line
+bool chk_ls_inter (Point A,Point B,Point C,Point D) {return on_line (ll_inter_pt (A,B,C,D),C,D);} // The intersection of AB(line) and CD (line) is on the CD (seg).
+bool chk_ss_inter (Point A,Point B,Point C,Point D) // seg - seg
 {
     LD c1 = cross (B - A,C - A),c2 = cross (B - A,D - A);
     LD d1 = cross (D - C,A - C),d2 = cross (D - C,B - C);
@@ -133,7 +133,7 @@ LD half_plane (vector <Line> &Vec)
     int h = 1,t = 0;
     auto check = [&] (Line x,Line y,Line z) -> bool
     {
-        Point P = inter_line (y.first,y.second,z.first,z.second);
+        Point P = ll_inter_pt (y.first,y.second,z.first,z.second);
         return dcmp (cross (x.second - x.first,P - x.first)) < 0;
     };
     vector <Line> q (n + 10);q[++t] = Vec[0];
@@ -147,7 +147,7 @@ LD half_plane (vector <Line> &Vec)
     while (h < t && check (q[h],q[t],q[t - 1])) --t;
     q[++t] = q[h];
     vector <Point> p;
-    for (int i = h;i < t;++i) p.push_back (inter_line (q[i].first,q[i].second,q[i + 1].first,q[i + 1].second));
+    for (int i = h;i < t;++i) p.push_back (ll_inter_pt (q[i].first,q[i].second,q[i + 1].first,q[i + 1].second));
     return area (p);
 }
 vector <Point> minkowski (vector <Point> &vecA,vector <Point> &vecB)
@@ -167,16 +167,16 @@ vector <Point> minkowski (vector <Point> &vecA,vector <Point> &vecB)
     return convex_hull (C);
 }
 
-bool in_cir (Circle C,Point P) {return dcmp (len (P - C.O) - C.r) <= 0;}
-Point get_cir_p (Circle C,LD theta) {return {C.O.x + C.r * cos (theta),C.O.y + C.r * sin (theta)};}
-int pd_lc_inter (Point A,Point B,Circle C) 
+bool chk_in_cir (Circle C,Point P) {return dcmp (len (P - C.O) - C.r) <= 0;}
+Point get_cir_pt (Circle C,LD theta) {return {C.O.x + C.r * cos (theta),C.O.y + C.r * sin (theta)};}
+int chk_lc_inter (Point A,Point B,Circle C) 
 {
     LD d = dis_seg (C.O,A,B);
     if (dcmp (d - C.r) == 0) return 0; // tangent
     if (dcmp (d - C.r) > 0) return -1; // separation
     return 1; // intersection
 }
-int pd_cc_inter (Circle A,Circle B) // the number of tagent lines
+int chk_cc_inter (Circle A,Circle B) // the number of tagent lines
 {
     LD d = len (A.O - B.O);
     if (dcmp (A.r + B.r - d) < 0) return 4; // externally separate
@@ -198,7 +198,7 @@ pair <Point,Point> cc_inter (Circle A,Circle B)
     Vector k = B.O - A.O;
     LD d = len (k);
     LD alpha = atan2 (k.y,k.x),beta = acos ((A.r * A.r + d * d - B.r * B.r) / (2 * A.r * d));
-    Point P1 = get_cir_p (A,alpha - beta),P2 = get_cir_p (A,alpha + beta);
+    Point P1 = get_cir_pt (A,alpha - beta),P2 = get_cir_pt (A,alpha + beta);
     return  {P1,P2};
 }
 pair <Point,Point> tan_cir (Point P,Circle C)
@@ -209,13 +209,13 @@ pair <Point,Point> tan_cir (Point P,Circle C)
     Vector P2 = P + (rotate (E,-theta) * sqrt (d * d - C.r * C.r));
     return {P1,P2};
 }
-Circle triangle_incir (Point A,Point B,Point C) 
+Circle tri_incir (Point A,Point B,Point C) 
 {
     LD a = dis (B,C),b = dis (A,C),c = dis (A,B);
     Point O = (A * a + B * b + C * c) / (a + b + c);
     return {O,dis_seg (O,A,B)};
 }
-Circle triangle_circum (Point A,Point B,Point C) 
+Circle tri_circum (Point A,Point B,Point C) 
 {
     LD Bx = B.x - A.x,By = B.y - A.y,Cx = C.x - A.x,Cy = C.y - A.y;
     LD D = 2 * (Bx * Cy - By * Cx);
@@ -232,22 +232,22 @@ auto get_tangents (Circle A,Circle B)
     LD base = atan2 (B.O.y - A.O.y,B.O.x - A.O.x);
     if (dcmp (d - fabs (dif)) == 0) 
     {
-        tangents.push_back ({get_cir_p (A,base + (A.r < B.r ? pi : 0)),get_cir_p (A,base + (A.r < B.r ? pi : 0))});
+        tangents.push_back ({get_cir_pt (A,base + (A.r < B.r ? pi : 0)),get_cir_pt (A,base + (A.r < B.r ? pi : 0))});
         return tangents;
     }
     LD theta = acos (dif / d);
-    tangents.push_back ({get_cir_p (A,base + theta),get_cir_p (B,base + theta)});
-    tangents.push_back ({get_cir_p (A,base - theta),get_cir_p (B,base - theta)});
-    if (dcmp (d - sum) == 0) tangents.push_back ({get_cir_p (A,base),get_cir_p (A,base)});
+    tangents.push_back ({get_cir_pt (A,base + theta),get_cir_pt (B,base + theta)});
+    tangents.push_back ({get_cir_pt (A,base - theta),get_cir_pt (B,base - theta)});
+    if (dcmp (d - sum) == 0) tangents.push_back ({get_cir_pt (A,base),get_cir_pt (A,base)});
     if (dcmp (d - sum) > 0)
     {
         theta = acos (sum / d);
-        tangents.push_back ({get_cir_p (A,base + theta),get_cir_p (B,base + theta + pi)});
-        tangents.push_back ({get_cir_p (A,base - theta),get_cir_p (B,base - theta + pi)});
+        tangents.push_back ({get_cir_pt (A,base + theta),get_cir_pt (B,base + theta + pi)});
+        tangents.push_back ({get_cir_pt (A,base - theta),get_cir_pt (B,base - theta + pi)});
     }
     return tangents;
 }
-LD tri_ploy_area (Point A,Point B,Circle C)
+LD tri_cir_area (Point A,Point B,Circle C)
 {
     Vector OA = A - C.O,OB = B - C.O;
     LD S = cross (OA,OB),sign = dcmp (cross (OA,OB)) > 0 ? 1 : -1;
@@ -256,7 +256,7 @@ LD tri_ploy_area (Point A,Point B,Circle C)
     if (da && db) return S * 0.5; // triangle
     if (!da && !db) 
     {
-        if (pd_lc_inter (A,B,C) == 1)// arc + triangle + arc
+        if (chk_lc_inter (A,B,C) == 1)// arc + triangle + arc
         {
             auto [P1,P2] = lc_inter (A,B,C);
             Vector OP1 = P1 - C.O,OP2 = P2 - C.O;
@@ -276,7 +276,7 @@ LD tri_ploy_area (Point A,Point B,Circle C)
 }
 LD cc_area (Circle C1,Circle C2)
 {
-    int op = pd_cc_inter (C1,C2);
+    int op = chk_cc_inter (C1,C2);
     if (op <= 1) return pi * min (C1.r,C2.r) * min (C1.r,C2.r);
     else if (op == 4) return 0;
     else
