@@ -21,8 +21,8 @@ Vector proj (Vector A,Vector B) {return A * (dot (A,B) / dot (A,A));} // project
 Point foot (Point P,Point A,Point B) {Vector AP = P - A,AB = B - A;return A + proj (AB,AP);} // foot
 Point reflect (Point P,Point A,Point B) {Point F = foot (P,A,B);return F * 2 - P;} // symmetry point
 Point rotate (Point P,LD theta) {return (Point){P.x * cos (theta) - P.y * sin (theta),P.x * sin (theta) + P.y * cos (theta)};} // counterclockwise 
-bool on_line (Point P,Point A,Point B) {return dcmp (cross (P - A,B - A)) == 0;} // judge whether on line AB
-bool on_seg (Point P,Point A,Point B) {return on_line (P,A,B) && dcmp (dot (P - A,P - B)) <= 0;} // judge whether on segment AB
+bool chk_on_line (Point P,Point A,Point B) {return dcmp (cross (P - A,B - A)) == 0;} // judge whether on line AB
+bool chk_on_seg (Point P,Point A,Point B) {return chk_on_line (P,A,B) && dcmp (dot (P - A,P - B)) <= 0;} // judge whether on segment AB
 LD dis_seg (Point P,Point A,Point B) // the distance from point P to segment AB.
 {
     if (dcmp (dot (B - A,P - A)) < 0) return dis (P,A);
@@ -31,16 +31,16 @@ LD dis_seg (Point P,Point A,Point B) // the distance from point P to segment AB.
 }
 Point ll_inter_pt (Point A,Point B,Point C,Point D) {return A + (B - A) * cross (C - A,D - C) / cross (B - A,D - C);}
 bool chk_ll_inter (Point A,Point B,Point C,Point D) {return dcmp (cross (B - A,D - C)) != 0;} // line - line
-bool chk_ls_inter (Point A,Point B,Point C,Point D) {return on_line (ll_inter_pt (A,B,C,D),C,D);} // The intersection of AB(line) and CD (line) is on the CD (seg).
+bool chk_ls_inter (Point A,Point B,Point C,Point D) {return chk_on_line (ll_inter_pt (A,B,C,D),C,D);} // The intersection of AB(line) and CD (line) is on the CD (seg).
 bool chk_ss_inter (Point A,Point B,Point C,Point D) // seg - seg
 {
     LD c1 = cross (B - A,C - A),c2 = cross (B - A,D - A);
     LD d1 = cross (D - C,A - C),d2 = cross (D - C,B - C);
     if (dcmp (c1) * dcmp (c2) < 0 && dcmp (d1) * dcmp (d2) < 0) return true;
-    if (dcmp(c1) == 0 && on_seg (C,A,B)) return true;
-    if (dcmp(c2) == 0 && on_seg (D,A,B)) return true;
-    if (dcmp(d1) == 0 && on_seg (A,C,D)) return true;
-    if (dcmp(d2) == 0 && on_seg (B,C,D)) return true;
+    if (dcmp(c1) == 0 && chk_on_seg (C,A,B)) return true;
+    if (dcmp(c2) == 0 && chk_on_seg (D,A,B)) return true;
+    if (dcmp(d1) == 0 && chk_on_seg (A,C,D)) return true;
+    if (dcmp(d2) == 0 && chk_on_seg (B,C,D)) return true;
     return false;
 }
 bool SameSide (Point A,Point B,Point C,Point D) {return cross (A - C,D - C) * cross (D - C,B - C) < 0;} // Point A,B  Line C,D
@@ -65,7 +65,7 @@ int in_Poly (vector <Point> &P,Point A) // O (n) for any polygons
     for (int i = 0;i < n;++i)
     {
         int j = (i + 1) % n;
-        if (on_seg (A,P[i],P[j])) return 2;// on the edge
+        if (chk_on_seg (A,P[i],P[j])) return 2;// on the edge
         if (A.y >= min (P[i].y,P[j].y) && A.y < max (P[i].y,P[j].y)) // the intersection is on the right
             cnt += dcmp (((A.y - P[i].y) * (P[j].x - P[i].x) / (P[j].y - P[i].y) + P[i].x) - A.x) > 0;
     }
@@ -74,7 +74,7 @@ int in_Poly (vector <Point> &P,Point A) // O (n) for any polygons
 int in_convex_Poly (vector <Point> &P,Point A) // O (log n) only for convex polygons
 {
     int n = P.size ();
-    if (on_seg (A,P[0],P[1]) || on_seg (A,P[0],P[n - 1])) return 2;
+    if (chk_on_seg (A,P[0],P[1]) || chk_on_seg (A,P[0],P[n - 1])) return 2;
     if (dcmp (cross (P[n - 1] - P[0],A - P[0])) > 0 || dcmp (cross (P[1] - P[0],A - P[0])) < 0) return 0;
     int l = 1,r = n - 2,res = -1;
     while (l <= r)
@@ -83,7 +83,7 @@ int in_convex_Poly (vector <Point> &P,Point A) // O (log n) only for convex poly
         if (dcmp (cross (P[mid] - P[0],A - P[0])) >= 0) res = mid,l = mid + 1;
         else r = mid - 1;
     }
-    if (on_seg (A,P[res],P[res + 1])) return 2;
+    if (chk_on_seg (A,P[res],P[res + 1])) return 2;
     if (dcmp (cross (P[res + 1] - P[res],A - P[res])) < 0) return 0;
     return 1;
 }
@@ -268,7 +268,7 @@ LD tri_cir_area (Point A,Point B,Circle C)
     else // triangle + arc
     {
         auto [P1,P2] = lc_inter (A,B,C);
-        if (on_seg (P2,A,B)) swap (P1,P2); 
+        if (chk_on_seg (P2,A,B)) swap (P1,P2); 
         Vector OP1 = P1 - C.O;
         if (dcmp (len (OA) - C.r) < 0) return cross (OA,OP1) * 0.5 + sign * 0.5 * C.r * C.r * angle (OP1,OB);
         else return cross (OP1,OB) * 0.5 + sign * 0.5 * C.r * C.r * angle (OP1,OA);
