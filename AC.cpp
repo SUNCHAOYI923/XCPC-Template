@@ -34,7 +34,7 @@ class AC
         for (int i = 1;i <= n;++i)
         {
             u = tr[u][s[i] - 'a'];
-            for (int j = u;j && val[j] != -1;j = fail[j]) res += val[j],val[j] = -1;
+            for (int j = u;j && ~val[j];j = fail[j]) res += val[j],val[j] = -1;
         }
         return res;
     }
@@ -45,9 +45,7 @@ a
 aa
 aa
 aaa
-
 t :
 aaaa 
-
 ans : 4  
 */
