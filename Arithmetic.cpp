@@ -32,6 +32,6 @@ class Z
     friend Z operator % (Z x,Z y) {return x %= y;}
     friend bool operator == (Z x,Z y) {return x.x == y.x;}
     friend bool operator != (Z x,Z y) {return x.x != y.x;}
-    friend istream& operator >> (istream& is, Z& o) {T val;is >> val;o = Z(val);return is;}
-    friend ostream& operator << (ostream &os, const Z &z) {return os << z.x;}
+    friend istream& operator >> (istream &is,Z& o) {T val;is >> val;o = Z (val);return is;}
+    friend ostream& operator << (ostream &os,const Z &z) {return os << z.x;}
 };

@@ -33,15 +33,9 @@ inline int read ()
     }
     return s * f;
 }
-inline void output (int x)
+inline void write (int x)
 {
-    if (x < 0) putchar ('-');
-    x = (x > 0) ? x : -x;
-    int cnt = 0;
-    while (x)
-    {
-        s[cnt++] = x % 10 + '0';
-        x /= 10;
-    }
-    while (cnt) putchar (s[--cnt]);
+    if (x < 0) {putchar ('-');write (-x);return;}
+    if (x > 9) write (x / 10);
+    putchar (x % 10 + '0');
 }
