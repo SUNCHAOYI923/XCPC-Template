@@ -9,7 +9,7 @@ struct SA
     vector <int> tmp;
     int n;
     SA (string &t) {init (t);}
-    inline void tSort (int m)
+    inline void tSort (int m)//size of char set (base sort)
     {
         vector<int> tmp1 (m + 1, 0);
         for (int i = 0;i < n;++i) ++tmp1[rk[tmp[i]]];
