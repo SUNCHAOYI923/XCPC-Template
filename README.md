@@ -1,1 +1,1 @@
-This is SUNCHAOYI's template for XCPC.
+This is Verifying We Are Humans' template for XCPC.
