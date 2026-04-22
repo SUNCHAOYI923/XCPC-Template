@@ -9,9 +9,9 @@ struct SA
     vector <int> tmp;
     int n;
     SA (string &t) {init (t);}
-    inline void tSort (int m)//size of char set (base sort)
+    inline void tSort (int m) //size of char set (base sort)
     {
-        vector<int> tmp1 (m + 1, 0);
+        vector<int> tmp1 (m + 1,0);
         for (int i = 0;i < n;++i) ++tmp1[rk[tmp[i]]];
         for (int i = 1;i <= m;++i) tmp1[i] += tmp1[i - 1];
         for (int i = n - 1;i >= 0;--i) sa[--tmp1[rk[tmp[i]]]] = tmp[i];

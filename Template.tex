@@ -12,23 +12,39 @@
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref} % 添加超链接支持
 
 \setcounter{MaxMatrixCols}{12}
+% 定义颜色
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{magenta}{rgb}{0.8,0,0.4}
+
+% 设置 lstset
 \lstset{
-    belowcaptionskip=1\baselineskip,
-    breaklines=true,
-    xleftmargin=\parindent,
     language=C++,
-    showstringspaces=false,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
     basicstyle=\ttfamily\small,
-    keywordstyle=\bfseries\color{green!40!black},
-    commentstyle=\itshape\color{purple!40!black},
-    identifierstyle=\color{blue},
-    stringstyle=\color{orange},
-    tabsize=2,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    frame=single,
 }
 
 \title{Template for XCPC}
-\author{Verifying We Are Human}
-\date{2025-2026}
+\author{Verifying We Are Human.}
+\date{\makebox[0.8\textwidth][l]{2025 $\sim$ 2026 \quad \href{https://github.com/SUNCHAOYI923}{Chaoyi Sun}, \href{https://github.com/jrzlw}{Liwen Zhang}, \href{https://github.com/ghskyzhou}{Tian Zhou}}\\
+      \makebox[0.8\textwidth][l]{2026 $\sim$ 2027 \quad \href{https://github.com/SUNCHAOYI923}{Chaoyi Sun}, \href{https://github.com/jrzlw}{Liwen Zhang}, \href{https://github.com/softstarssl}{Fengting Deng}}}
 
 \begin{document}
 
@@ -37,7 +53,6 @@
 \tableofcontents
 
 \pagebreak
-
 
 \section{Graph}
 
@@ -213,14 +228,14 @@
 \lstinputlisting{Fast IO.cpp}
 
 \subsection{Execution}
-\lstinputlisting{Run.bash}
+\lstinputlisting[language=bash]{Run.bash}
 
-\lstinputlisting{Run.ps1}
+\lstinputlisting[language=bash]{Run.ps1}
 
 \subsection{Comparsion}
-\lstinputlisting{Cmp.sh}
+\lstinputlisting[language=bash]{Cmp.sh}
 
 \subsection{Python}
-\lstinputlisting{python.py}
+\lstinputlisting[language=python]{python.py}
 
 \end{document}
