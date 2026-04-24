@@ -1,6 +1,6 @@
 using LD = long double;
 const LD pi = acos (-1.0);
-const LD eps = 1e-8;
+const LD eps = 1e-8L;
 int dcmp (LD x) {return x < -eps ? -1 : (x > eps ? 1 : 0);}
 struct Point {LD x,y;Point (LD x = 0,LD y = 0) : x (x),y (y) {}};
 struct Circle {Point O;LD r;Circle (Point O = Point (),LD r = 0) : O (O),r (r) {}};
@@ -165,6 +165,16 @@ vector <Point> minkowski (vector <Point> &vecA,vector <Point> &vecB)
         else C.push_back (C.back () + B[posb++]);
     }
     return convex_hull (C);
+}
+bool chk_convex_inter_strict (vector <Point> A, vector <Point> B) // Check if two convex polygons strictly intersect
+{
+    vector <Point> negB;
+    for (auto p : B) negB.push_back (Point (-p.x, -p.y));
+    negB = convex_hull (negB); 
+    vector <Point> C = minkowski (A, negB);
+    if (C.size () < 3) return false;
+    Point origin (0, 0);
+    return in_convex_Poly (C, origin) == 1; 
 }
 
 bool chk_in_cir (Circle C,Point P) {return dcmp (len (P - C.O) - C.r) <= 0;}
