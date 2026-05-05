@@ -1,17 +1,11 @@
 # Template for XCPC
 
-## Team Name
+## Information
 
-**中文** 正在验证该队是否是真人。
-
-**English** Verifying We Are Human.
-
-## Members
-
-| Year | Members |
-|------|---------|
-| 2025 ~ 2026 | [Chaoyi Sun](https://github.com/SUNCHAOYI923), [Liwen Zhang](https://github.com/jrzlw), [Tian Zhou](https://github.com/ghskyzhou) |
-| 2026 ~ 2027 | [Chaoyi Sun](https://github.com/SUNCHAOYI923), [Liwen Zhang](https://github.com/jrzlw), [Fengting Deng](https://github.com/softstarssl) |
+| Year |Team Name| Members |
+|:--:|:--:|:--:|
+| 2025 ~ 2026 |**中文** 正在验证该队是否是真人。<br> **English** Verifying We Are Human.| [Chaoyi Sun](https://github.com/SUNCHAOYI923), [Liwen Zhang](https://github.com/jrzlw), [Tian Zhou](https://github.com/ghskyzhou) |
+| 2026 ~ 2027 |**中文** 该队已通过人机验证。<br> **English** Human verification passed.|[Chaoyi Sun](https://github.com/SUNCHAOYI923), [Liwen Zhang](https://github.com/jrzlw), [Fengting Deng](https://github.com/softstarssl) |
 
 ## Training
 
@@ -71,4 +65,9 @@
 |$50$|$2026.01.25$|[The 2024 ICPC Asia East Continent Final Contest (EC-Final 2024)](https://qoj.ac/contest/1894)|$3/12$|$70\%$|$7/12$|
 |$51$|$2026.02.02$|[The 2025 ICPC Asia East Continent Final Contest (EC-Final 2025)](https://qoj.ac/contest/3295)|$3/12$|$25\%$|$5/12$|
 
-#### 2026 ~ 2027
+### 2026 ~ 2027
+
+|$\texttt{Id}$|$\texttt{Date}$|$\texttt{Title}$|$\texttt{Solved}$|$\texttt{Dirt}$|$\texttt{Post-contest Solved}$|
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|$1$|$2026.04.23$|[The 2022 ICPC Northwestern Europe Regional Contest (NWERC 2022)](https://qoj.ac/contest/1054)|$9/12$|$40\%$|$12/12$|
+|$2$|$2026.04.29$|[The 2026 ICPC China Shenzhen Invitational Contest](https://qoj.ac/contest/3588)|$7/13$|$12\%$|$10/13$|
