@@ -6,6 +6,8 @@ constexpr int INF = 0x3f3f3f3f;
 using i64 = long long;
 using u64 = unsigned long long;
 using pii = pair <int, int>;
+using vi = vector <int>;
+using vii = vector <pii>;
 inline int read()
 {
     int s = 0; int f = 1;

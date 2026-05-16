@@ -15,13 +15,22 @@ class NTT
         }
         return res;
     }
+    
+    void init_rev(int tot)
+    {
+        int L = 0; n = 1;
+        while (n < tot) n <<= 1, ++L;
+        rev.resize(n);
+        for (int i = 0; i < n; ++i) rev[i] = (rev[i >> 1] >> 1) | ((i & 1) << (L - 1));
+    }
+
     void ntt (vector <int> &a,int op)
     {
         for (int i = 0;i < n;++i) 
             if (i < rev[i]) swap (a[i],a[rev[i]]);
         for (int len = 1;len < n;len <<= 1) 
         {
-            int wn = qpow (3,(P - 1) / (len << 1));
+            int wn = qpow (G,(P - 1) / (len << 1));
             if (op == -1) wn = qpow (wn,P - 2); 
             for (int i = 0;i < n;i += len << 1) 
             {
@@ -41,6 +50,7 @@ class NTT
             for (auto &x : a) x = 1ll * x * inv_n % P;
         }
     }
+    
     public :
     vector <int> conv (vector <int> a,vector <int> b)
     {
@@ -52,5 +62,44 @@ class NTT
         for (int i = 0;i < n;++i) a[i] = 1ll * a[i] * b[i] % P;
         ntt (a,-1);a.resize (tot);
         return a;
+    }
+
+    vector <int> inv(vector <int> a, int m)
+    {
+        vector <int> b (1, qpow (a[0], P - 2));
+        for (int len = 2; (len >> 1) < m; len <<= 1) 
+        {
+            int sz = min((int)a.size(), len);
+            vector <int> f (a.begin(),a.begin() + sz);
+            init_rev(len << 1);
+            f.resize(n);
+            vector <int> h = b; h.resize(n);
+            ntt(f, 1); ntt (h, 1);
+            for (int i = 0; i < n; ++i) 
+                h[i] = 1ll * h[i] * (2ll - 1ll * f[i] * h[i] % P + P) % P;
+            ntt(h, -1);
+            b.assign (h.begin(), h.begin() + min(len, m));
+        }
+        b.resize(m);
+        return b;
+    }
+
+    pair <vector <int>, vector <int>> divmod(vector <int> a, vector <int> b)
+    {
+        int n_sz = a.size(), m_sz = b.size();
+        if (n_sz < m_sz) return {{0},a};
+        int dq = n_sz - m_sz + 1;
+        vector <int> ra = a, rb = b;
+        reverse(ra.begin(), ra.end()); reverse(rb.begin(), rb.end());
+        ra.resize(dq); rb.resize(dq);
+        vector <int> inv_rb = inv(rb, dq);
+        vector <int> q = conv(ra, inv_rb);
+        q.resize(dq);
+        reverse(q.begin(), q.end());
+        vector <int> qb = conv(q, b);
+        vector <int> r(m_sz - 1);
+        for (int i = 0; i < m_sz - 1; ++i)
+            r[i] = (0ll + a[i] - (i < (int)qb.size() ? qb[i] : 0) + P) % P;
+        return {q,r};
     }
 };

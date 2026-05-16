@@ -71,3 +71,4 @@
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |$1$|$2026.04.23$|[The 2022 ICPC Northwestern Europe Regional Contest (NWERC 2022)](https://qoj.ac/contest/1054)|$9/12$|$40\%$|$12/12$|
 |$2$|$2026.04.29$|[The 2026 ICPC China Shenzhen Invitational Contest](https://qoj.ac/contest/3588)|$7/13$|$12\%$|$10/13$|
+|$3$|$2026.05.14$|[The 2025 ICPC Asia Bangkok Regional Contest](https://qoj.ac/contest/2826)|$7/14$|$50\%$|$10/14$|
