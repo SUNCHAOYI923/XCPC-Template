@@ -1,10 +1,10 @@
 class NTT
 {
-    vector <int> rev;int n = 1;
+    vector <int> rev; int n = 1;
     const int P = 1004535809;//998244353 469762049 50000000001507329LL 4179340454199820289
     const int G = 3;
     //1945555039024054273 for G = 5
-    int qpow (int x,int y)
+    int qpow(int x, int y)
     {
         int res = 1;
         while (y)
@@ -15,7 +15,6 @@ class NTT
         }
         return res;
     }
-    
     void init_rev(int tot)
     {
         int L = 0; n = 1;
@@ -23,21 +22,20 @@ class NTT
         rev.resize(n);
         for (int i = 0; i < n; ++i) rev[i] = (rev[i >> 1] >> 1) | ((i & 1) << (L - 1));
     }
-
-    void ntt (vector <int> &a,int op)
+    void ntt(vector <int> &a, int op)
     {
-        for (int i = 0;i < n;++i) 
-            if (i < rev[i]) swap (a[i],a[rev[i]]);
-        for (int len = 1;len < n;len <<= 1) 
+        for (int i = 0; i < n; ++i) 
+            if (i < rev[i]) swap (a[i] ,a[rev[i]]);
+        for (int len = 1; len < n; len <<= 1) 
         {
-            int wn = qpow (G,(P - 1) / (len << 1));
-            if (op == -1) wn = qpow (wn,P - 2); 
-            for (int i = 0;i < n;i += len << 1) 
+            int wn = qpow(G, (P - 1) / (len << 1));
+            if (op == -1) wn = qpow (wn, P - 2); 
+            for (int i = 0; i < n; i += len << 1) 
             {
                 int w = 1;
-                for(int j = 0;j < len;++j) 
+                for(int j = 0; j < len; ++j) 
                 {
-                    int u = a[i + j] % P,v = 1ll * a[i + j + len] * w % P;
+                    int u = a[i + j] % P, v = 1ll * a[i + j + len] * w % P;
                     a[i + j] = (0ll + u + v) % P;
                     a[i + j + len] = (0ll + u - v + P) % P;
                     w = 1ll * w * wn % P;
@@ -46,24 +44,21 @@ class NTT
         }
         if (op == -1)
         {
-            int inv_n = qpow (n,P - 2);
+            int inv_n = qpow(n, P - 2);
             for (auto &x : a) x = 1ll * x * inv_n % P;
         }
     }
-    
-    public :
-    vector <int> conv (vector <int> a,vector <int> b)
+    public:
+    vector <int> conv(vector <int> a, vector <int> b)
     {
-        int L = 0,tot = (int)a.size () + (int)b.size () - 1;n = 1;
-        while (n < tot) n <<= 1,++L;
-        rev.resize (n);a.resize (n);b.resize (n);
-        for (int i = 0;i < n;++i) rev[i] = (rev[i >> 1] >> 1) | ((i & 1) << (L - 1));
-        ntt (a,1);ntt (b,1);
-        for (int i = 0;i < n;++i) a[i] = 1ll * a[i] * b[i] % P;
-        ntt (a,-1);a.resize (tot);
+        int tot = (int)a.size() + (int)b.size() - 1;
+        init_rev(tot);
+        a.resize(n); b.resize(n);
+        ntt(a, 1); ntt(b, 1);
+        for (int i = 0; i < n; ++i) a[i] = 1ll * a[i] * b[i] % P;
+        ntt(a, -1); a.resize(tot);
         return a;
     }
-
     vector <int> inv(vector <int> a, int m)
     {
         vector <int> b (1, qpow (a[0], P - 2));
@@ -71,8 +66,8 @@ class NTT
         {
             int sz = min((int)a.size(), len);
             vector <int> f (a.begin(),a.begin() + sz);
-            init_rev(len << 1);
-            f.resize(n);
+            init_rev (len << 1);
+            f.resize (n);
             vector <int> h = b; h.resize(n);
             ntt(f, 1); ntt (h, 1);
             for (int i = 0; i < n; ++i) 
@@ -80,10 +75,9 @@ class NTT
             ntt(h, -1);
             b.assign (h.begin(), h.begin() + min(len, m));
         }
-        b.resize(m);
+        b.resize (m);
         return b;
     }
-
     pair <vector <int>, vector <int>> divmod(vector <int> a, vector <int> b)
     {
         int n_sz = a.size(), m_sz = b.size();

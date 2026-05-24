@@ -49,7 +49,7 @@
 |$34$|$2025.10.19$|[The 2024 Shandong Provincial Collegiate Programming Contest](https://qoj.ac/contest/1801)|$8/13$|$38\%$|$9/13$|
 |$35$|$2025.10.23$|[The 2025 ICPC Asia Xi'an Regional Contest](https://qoj.ac/contest/2562)|$5/13$|$44\%$|$8/13$|
 |$36$|$2025.10.26$|[The 2025 ICPC Asia Chengdu Regional Contest](https://qoj.ac/contest/2567)|$6/13$|$33\%$|$9/13$|
-|$37$|$2025.11.02$|[The 2025 ICPC Asia Wuhan Regional Contest](https://qoj.ac/contest/2609)|$5/13$|$37\%$|$7/13$|
+|$37$|$2025.11.02$|[The 2025 ICPC Asia Wuhan Regional Contest](https://qoj.ac/contest/2609)|$5/13$|$37\%$|$8/13$|
 |$38$|$2025.11.05$|[The 2022 ICPC Asia Nanjing Regional Contest](https://qoj.ac/contest/1093)|$7/13$|$46\%$|$7/13$|
 |$39$|$2025.11.09$|[The 2025 ICPC Asia Nanjing Regional Contest](https://qoj.ac/contest/2581)|$4/13$|$42\%$|$7/13$|
 |$40$|$2025.11.23$|[The 2025 ICPC Asia Shenyang Regional Contest](https://qoj.ac/contest/2641)|$4/13$|$33\%$|$7/13$|
@@ -72,3 +72,5 @@
 |$1$|$2026.04.23$|[The 2022 ICPC Northwestern Europe Regional Contest (NWERC 2022)](https://qoj.ac/contest/1054)|$9/12$|$40\%$|$12/12$|
 |$2$|$2026.04.29$|[The 2026 ICPC China Shenzhen Invitational Contest](https://qoj.ac/contest/3588)|$7/13$|$12\%$|$10/13$|
 |$3$|$2026.05.14$|[The 2025 ICPC Asia Bangkok Regional Contest](https://qoj.ac/contest/2826)|$7/14$|$50\%$|$10/14$|
+|$4$|$2026.05.17$|[The 2026 Guangdong Provincial Collegiate Programming Contest](https://qoj.ac/contest/3756)|$6/12$|$54\%$|$11/12$|
+|$5$|$2026.05.21$|[The 2025 ICPC Asia Shanghai Regional Contest](https://qoj.ac/contest/2908)|$6/13$|$53\%$|$9/13$|

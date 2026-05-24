@@ -31,7 +31,7 @@ LD dis_seg (Point P,Point A,Point B) // the distance from point P to segment AB.
 }
 Point ll_inter_pt (Point A,Point B,Point C,Point D) {return A + (B - A) * cross (C - A,D - C) / cross (B - A,D - C);}
 bool chk_ll_inter (Point A,Point B,Point C,Point D) {return dcmp (cross (B - A,D - C)) != 0;} // line - line
-bool chk_ls_inter (Point A,Point B,Point C,Point D) {return chk_on_line (ll_inter_pt (A,B,C,D),C,D);} // The intersection of AB(line) and CD (line) is on the CD (seg).
+bool chk_ls_inter (Point A,Point B,Point C,Point D) {return chk_on_seg (ll_inter_pt (A,B,C,D),C,D);} // The intersection of AB(line) and CD (line) is on the CD (seg).
 bool chk_ss_inter (Point A,Point B,Point C,Point D) // seg - seg
 {
     LD c1 = cross (B - A,C - A),c2 = cross (B - A,D - A);
