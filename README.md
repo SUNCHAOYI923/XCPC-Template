@@ -43,7 +43,7 @@
 |$28$|$2025.09.11$|[The 2023 ICPC Asia Hefei Regional Contest](https://qoj.ac/contest/1440)|$4/12$|$71\%$|$5/12$|
 |$29$|$2025.09.25$|[The 2021 ICPC Southeastern European Regional Programming Contest](https://qoj.ac/contest/2509)|$8/14$|$42\%$|$9/14$|
 |$30$|$2025.10.02$|[The 2022 ICPC Asia Hong Kong Regional Contest](https://qoj.ac/contest/1099)|$6/12$|$57\%$|$9/12$|
-|$31$|$2025.10.09$|[The 2024 ICPC Asia Hong Kong Regional Contest](https://qoj.ac/contest/1885)|$5/13$|$54\%$|$6/13$|
+|$31$|$2025.10.09$|[The 2024 ICPC Asia Hong Kong Regional Contest](https://qoj.ac/contest/1885)|$5/13$|$54\%$|$7/13$|
 |$32$|$2025.10.13$|[The 2018 ICPC Asia Qingdao Regional Contest](https://qoj.ac/contest/1187)|$7/13$|$12\%$|$8/13$|
 |$33$|$2025.10.17$|[The 2024 ICPC Asia Shenyang Regional Contest](https://qoj.ac/contest/1865)|$3/13$|$50\%$|$6/13$|
 |$34$|$2025.10.19$|[The 2024 Shandong Provincial Collegiate Programming Contest](https://qoj.ac/contest/1801)|$8/13$|$38\%$|$9/13$|
