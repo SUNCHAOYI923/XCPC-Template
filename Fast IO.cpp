@@ -8,6 +8,7 @@ using u64 = unsigned long long;
 using pii = pair <int, int>;
 using vi = vector <int>;
 using vii = vector <pii>;
+using LD = long double;
 inline int read()
 {
     int s = 0; int f = 1;
@@ -26,7 +27,7 @@ inline int read()
 }
 inline void write(int x)
 {
-    if (x < 0) {putchar ('-'); write(-x); return;}
+    if (x < 0) {putchar('-'); write(-x); return;}
     if (x > 9) write(x / 10);
     putchar(x % 10 + '0');
 }

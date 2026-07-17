@@ -2,7 +2,7 @@ template <int MOD = 998244353>
 class NTT
 {
     vector <int> rev; int n = 1;
-    const int P = MOD;//998244353 469762049 50000000001507329LL 4179340454199820289
+    const int P = MOD; //998244353 469762049 50000000001507329LL 4179340454199820289
     const int G = 3;
     //1945555039024054273 for G = 5
     int qpow(int x, int y)
@@ -26,19 +26,19 @@ class NTT
     void ntt(vector <int> &a, int op)
     {
         for (int i = 0; i < n; ++i) 
-            if (i < rev[i]) swap (a[i] ,a[rev[i]]);
+            if (i < rev[i]) swap(a[i], a[rev[i]]);
         for (int len = 1; len < n; len <<= 1) 
         {
             int wn = qpow(G, (P - 1) / (len << 1));
-            if (op == -1) wn = qpow (wn, P - 2); 
+            if (op == -1) wn = qpow(wn, P - 2); 
             for (int i = 0; i < n; i += len << 1) 
             {
                 int w = 1;
                 for(int j = 0; j < len; ++j) 
                 {
-                    int u = a[i + j] % P, v = 1ll * a[i + j + len] * w % P;
-                    a[i + j] = (0ll + u + v) % P;
-                    a[i + j + len] = (0ll + u - v + P) % P;
+                    int u = a[i + j] >= P ? a[i + j] - P : a[i + j], v = 1ll * a[i + j + len] * w % P;
+                    a[i + j] = u + v >= P ? u + v - P : u + v;
+                    a[i + j + len] = u - v <= 0 ? u - v + P : u - v;
                     w = 1ll * w * wn % P;
                 }
             }
@@ -71,19 +71,19 @@ class NTT
             init_rev(len << 1);
             f.resize(n);
             vector <int> h = b; h.resize(n);
-            ntt(f, 1); ntt (h, 1);
+            ntt(f, 1); ntt(h, 1);
             for (int i = 0; i < n; ++i) 
                 h[i] = 1ll * h[i] * (2ll - 1ll * f[i] * h[i] % P + P) % P;
             ntt(h, -1);
-            b.assign (h.begin(), h.begin() + min(len, m));
+            b.assign(h.begin(), h.begin() + min(len, m));
         }
-        b.resize (m);
+        b.resize(m);
         return b;
     }
     pair <vector <int>, vector <int>> Divmod(vector <int> a, vector <int> b)
     {
         int n_sz = a.size(), m_sz = b.size();
-        if (n_sz < m_sz) return {{0},a};
+        if (n_sz < m_sz) return {{0}, a};
         int dq = n_sz - m_sz + 1;
         vector <int> ra = a, rb = b;
         reverse(ra.begin(), ra.end()); reverse(rb.begin(), rb.end());
@@ -96,7 +96,7 @@ class NTT
         vector <int> r(m_sz - 1);
         for (int i = 0; i < m_sz - 1; ++i)
             r[i] = (0ll + a[i] - (i < (int)qb.size() ? qb[i] : 0) + P) % P;
-        return {q,r};
+        return {q, r};
     }
     vector <int> Sqrt(vector <int> a, int m) // b[0] = 1
     {
