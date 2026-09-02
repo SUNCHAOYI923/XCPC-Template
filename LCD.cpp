@@ -33,12 +33,11 @@ void DP(int u = 1, int fa = 0, long long *f = F)
         if(v != mxs[u])
         {
             long long *fv = tmp;
-            for(int i = 0; i <= mxd[v] - dep[v]; ++i) fv[i] = 0;
-            tmp += (mxd[v] - dep[v] + 1);
             DP(v, u, fv);
             for(int i = 0; i <= mxd[v] - dep[v]; ++i)
             {
                 f[i + 1] += fv[i];
+                fv[i] = 0;
             }
         }
         else
