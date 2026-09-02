@@ -1,27 +1,27 @@
-template <typename T,int MOD = 1000000007>
+template <typename T, int MOD = 1000000007>
 class COM
 {
     int n;
-    vector <Z <T,MOD>> fac,inv;
+    vector <Z <T, MOD>> fac, inv;
     public : 
-    COM (int n) : n (n),fac (2 * n + 2),inv (2 * n + 2)
+    COM(int n) : n(n), fac(2 * n + 2), inv(2 * n + 2)
     {
         fac[0] = inv[0] = inv[1] = 1;
-        for (int i = 1;i <= 2 * n;++i) fac[i] = fac[i - 1] * i;
+        for (int i = 1; i <= 2 * n; ++i) fac[i] = fac[i - 1] * i;
         inv[2 * n] = fac[2 * n] ^ (MOD - 2);
-        for (int i = 2 * n - 1;i > 0;--i) inv[i] = inv[i + 1] * (i + 1);
+        for (int i = 2 * n - 1; i > 0; --i) inv[i] = inv[i + 1] * (i + 1);
     }
-    Z <T,MOD> f (int x) {return fac[x];}
-    Z <T,MOD> inv_f (int x) {return inv[x];}
-    Z <T,MOD> comb (int x,int y)
+    Z <T, MOD> f(int x) {return fac[x];}
+    Z <T, MOD> inv_f(int x) {return inv[x];}
+    Z <T, MOD> comb(int x, int y)
     {
         if (x < 0 || y < 0 || y > x) return 0;
         else return fac[x] * inv[x - y] * inv[y];   
     }
-    Z <T,MOD> arr (int x,int y)
+    Z <T, MOD> arr(int x, int y)
     {
         if (x < 0 || y < 0 || y > x) return 0;
         else return fac[x] * inv[x - y];   
     }
-    Z <T,MOD> catalan (int x) {return comb (2 * x,x) / (x + 1);}
+    Z <T, MOD> catalan(int x) {return comb(2 * x, x) / (x + 1);}
 };

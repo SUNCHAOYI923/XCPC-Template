@@ -41,7 +41,7 @@ namespace SIZ
     inline int rnk(int k){int res=t[t[k].l].siz;while(t[k].f){res+=(k==t[t[k].f].r)?
         t[t[t[k].f].l].siz+1:0;k=t[k].f;}return res+1;}
 }
-namespace MERGE//将多个相同值合并至一个点
+namespace MERGE//merge same values into one node
 {
     struct Node
     {
@@ -121,7 +121,7 @@ namespace MERGE//将多个相同值合并至一个点
         }
     }
 }
-namespace PFHQ//区间复制
+namespace PFHQ//Interval Copy
 {
     #include<bits/stdc++.h>
     #define rep(a,b,c) for(register int c=(a);c<=(b);++c)
