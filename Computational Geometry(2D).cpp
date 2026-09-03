@@ -23,6 +23,12 @@ Point reflect(Point P, Point A, Point B) {Point F = foot(P, A, B); return F * 2 
 Point rotate(Point P, LD theta) {return (Point){P.x * cos(theta) - P.y * sin(theta), P.x * sin(theta) + P.y * cos(theta)};} // counterclockwise 
 bool chk_on_line(Point P, Point A, Point B) {return dcmp(cross(P - A, B - A)) == 0;} // judge whether on line AB
 bool chk_on_seg(Point P, Point A, Point B) {return chk_on_line(P, A, B) && dcmp(dot(P - A, P - B)) <= 0;} // judge whether on segment AB
+pair <Point, Point> get_parallel(Point P, Point A, Point B) {return {P, P + (B - A)};}// the line passing through P and parallel to line AB
+pair <Point, Point> get_vertical(Point P, Point A, Point B) // the line passing through P and perpendicular to line AB
+{
+    Vector V = B - A, N = {-V.y, V.x};
+    return {P, P + N};
+}
 LD dis_seg(Point P, Point A, Point B) // the distance from point P to segment AB.
 {
     if (dcmp(dot(B - A, P - A)) < 0) return dis(P, A);

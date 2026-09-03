@@ -1,4 +1,3 @@
-//Longest Chain Decomposition
 //Total Length of Chains is O(n)
 //Each merge will eliminate 1 node of the shorter chains
 const int N = 1e6 + 10;
