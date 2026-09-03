@@ -1,4 +1,4 @@
-class HLD// Heavy Light Decomposition
+class HLD
 {
     public:
         vector<vector<int> > G;
