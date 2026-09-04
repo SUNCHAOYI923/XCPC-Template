@@ -44,7 +44,7 @@
 |$29$|$2025.09.25$|[The 2021 ICPC Southeastern European Regional Programming Contest](https://qoj.ac/contest/2509)|$8/14$|$42\%$|$9/14$|
 |$30$|$2025.10.02$|[The 2022 ICPC Asia Hong Kong Regional Contest](https://qoj.ac/contest/1099)|$6/12$|$57\%$|$9/12$|
 |$31$|$2025.10.09$|[The 2024 ICPC Asia Hong Kong Regional Contest](https://qoj.ac/contest/1885)|$5/13$|$54\%$|$7/13$|
-|$32$|$2025.10.13$|[The 2018 ICPC Asia Qingdao Regional Contest](https://qoj.ac/contest/1187)|$7/13$|$12\%$|$8/13$|
+|$32$|$2025.10.13$|[The 2018 ICPC Asia Qingdao Regional Contest](https://qoj.ac/contest/1187)|$7/13$|$12\%$|$11/13$|
 |$33$|$2025.10.17$|[The 2024 ICPC Asia Shenyang Regional Contest](https://qoj.ac/contest/1865)|$3/13$|$50\%$|$6/13$|
 |$34$|$2025.10.19$|[The 2024 Shandong Provincial Collegiate Programming Contest](https://qoj.ac/contest/1801)|$8/13$|$38\%$|$9/13$|
 |$35$|$2025.10.23$|[The 2025 ICPC Asia Xi'an Regional Contest](https://qoj.ac/contest/2562)|$5/13$|$44\%$|$8/13$|
@@ -74,3 +74,9 @@
 |$3$|$2026.05.14$|[The 2025 ICPC Asia Bangkok Regional Contest](https://qoj.ac/contest/2826)|$7/14$|$50\%$|$10/14$|
 |$4$|$2026.05.17$|[The 2026 Guangdong Provincial Collegiate Programming Contest](https://qoj.ac/contest/3756)|$6/12$|$54\%$|$11/12$|
 |$5$|$2026.05.21$|[The 2025 ICPC Asia Shanghai Regional Contest](https://qoj.ac/contest/2908)|$6/13$|$53\%$|$9/13$|
+|$6$|$2026.05.27$|[The 2026 ICPC China Shaanxi National Invitational Programming Contest](https://qoj.ac/contest/3766)|$8/14$|$50\%$|$11/14$|
+|$7$|$2026.06.04$|[The 2026 ICPC China Zhejiang Province Programming Contest (23rd)](https://qoj.ac/contest/3749)|$7/13$|$53\%$|$9/13$|
+|$8$|$2026.06.11$|[The 2026 ICPC China Wuhan National Invitational and Hubei Provincial Programming Contest](https://qoj.ac/contest/3799)|$7/13$|$41\%$|$8/13$|
+|$8$|$2026.06.11$|[The 2026 ICPC China Wuhan National Invitational and Hubei Provincial Programming Contest](https://qoj.ac/contest/3799)|$7/13$|$41\%$|$8/13$|
+|$9$|$2026.06.18$|[The 2025 ICPC Southeastern Europe Regional Contest (SEERC 2025)](https://qoj.ac/contest/2828)|$8/12$|$42\%$|$9/12$|
+|$10$|$2026.06.25$|[The 2026 ICPC Europe Championship](https://qoj.ac/contest/3347)|$5/11$|$72\%$|$7/11$|
