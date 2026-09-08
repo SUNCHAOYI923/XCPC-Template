@@ -9,7 +9,7 @@ class SAM
     vector <node> t; int lst;
     void GetParentTree(vector <vector <int>> &G)
     {
-        G.resize(t.size());
+        G.assign(t.size(),vector<int>());
         for (unsigned i = 1; i < t.size(); ++i) G[t[i].fa].push_back(i);
     }
     void extend(const int &c)
