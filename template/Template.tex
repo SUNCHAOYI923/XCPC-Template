@@ -13,25 +13,23 @@
 \usepackage[margin=0.62in,top=0.72in,bottom=0.72in]{geometry}
 \usepackage[nottoc]{tocbibind}
 \usepackage{xcolor}
-\usepackage{float}
 \usepackage{multicol}
 \usepackage{titlesec}
-\usepackage{titling}
 \usepackage{fancyhdr}
+\usepackage{caption}
 \usepackage{tocloft}
+\usetikzlibrary{arrows.meta}
+
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\hypersetup{
+    pdftitle={Template for XCPC},
+    pdfauthor={Dft Fan Club}
+}
 
 \setcounter{MaxMatrixCols}{12}
-
-% ---------- Project paths ----------
-% Repository structure:
-% xcpc-template/
-% ├── assets/
-% ├── code/
-% └── template/
-%     └── template.tex
 \graphicspath{{../assets/}}
 \newcommand{\codedir}{../code/}
+\newcommand{\sourcedir}{../source/}
 \newcommand{\code}[2][]{%
     \lstinputlisting[#1]{\codedir#2}%
 }
@@ -45,16 +43,16 @@
 \definecolor{codeoperator}{RGB}{0,92,140}
 \definecolor{backcolour}{RGB}{248,248,246}
 \definecolor{coderule}{RGB}{210,210,205}
-\definecolor{magenta}{RGB}{0,0,255}
 \definecolor{accent}{RGB}{0,150,165}
+\definecolor{terminalgreen}{RGB}{0,150,105}
+\definecolor{substringred}{RGB}{185,45,45}
 
 % ---------- Layout ----------
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.25em}
 \setlength{\columnsep}{18pt}
 \setlength{\columnseprule}{0.2pt}
-\setlength{\droptitle}{-2.8em}
-\renewcommand{\baselinestretch}{0.96}
+\linespread{0.96}
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \setlength{\cftbeforesecskip}{2pt}
@@ -141,17 +139,6 @@
        {?}{{{\color{codeoperator}?}}}{1}
        {:}{{{\color{codeoperator}:}}}{1},
 }
-
-\title{Template for XCPC}
-\author{Verifying We Are Human. / Human verification passed.}
-\date{\makebox[0.8\textwidth][l]{2025 $\sim$ 2026 \quad
-      \href{https://github.com/SUNCHAOYI923}{Chaoyi Sun},
-      \href{https://github.com/jrzlw}{Liwen Zhang},
-      \href{https://github.com/ghskyzhou}{Tian Zhou}}\\
-      \makebox[0.8\textwidth][l]{2026 $\sim$ 2027 \quad
-      \href{https://github.com/SUNCHAOYI923}{Chaoyi Sun},
-      \href{https://github.com/jrzlw}{Liwen Zhang},
-      \href{https://github.com/softstarssl}{Fengting Deng}}}
 
 \begin{document}
 
@@ -354,6 +341,14 @@
 
 \subsection{SAM}
 \code{SAM.cpp}
+
+\begin{center}
+    \captionsetup{type=figure}
+    \resizebox{\linewidth}{!}{\input{\sourcedir SAM.tex}}
+    \caption{Suffix-link tree for the suffix automaton of \texttt{aababa};
+             green boxes mark terminal states.}
+    \label{fig:sam-suffix-link-tree}
+\end{center}
 
 \newpage
 
