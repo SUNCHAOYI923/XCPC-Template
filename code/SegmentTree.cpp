@@ -46,7 +46,7 @@ namespace Seg
 		int sum=query(t[cur].l,ql,mid,l,mid);
 		return find(t[cur].r,ql,qr,x-sum,mid+1,r);
 	}
-	inline int merge(int x,int y,int l=1,int r=N-10)
+	inline int merge(int x,int y,int l,int r)
 	{
 		if(!x||!y)return x|y;
 		if(l==r){t[x].sm+=t[y].sm;return x;}
@@ -54,5 +54,15 @@ namespace Seg
 		t[x].l=merge(t[x].l,t[y].l,l,mid);
 		t[x].r=merge(t[x].r,t[y].r,mid+1,r);
 		update(x);return x;
+	}
+	//Persistent
+	inline void merge(int &x,int y,int l=1,int r=N-10)
+	{
+		if(!x||!y){x+=y;return;}
+		int nx=++cnt;t[nx]=t[x];x=nx;
+		if(l==r){t[x].mx+=t[y].mx;t[x].res=t[x].mx?l:0;return;}
+		int mid=(l+r)>>1;
+		merge(t[x].l,t[y].l,l,mid);merge(t[x].r,t[y].r,mid+1,r);
+		update(x);
 	}
 }
