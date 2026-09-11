@@ -1,4 +1,4 @@
-//heap-order(root is min) on values and BST-order on keys
+//heap-order(root is max) on values and BST-order on keys
 stack <int> s;
 vector <int> L(n + 1, 0), R(n + 1, 0);
 vector <int> ql(n + 1, 0), qr(n + 1, 0);
