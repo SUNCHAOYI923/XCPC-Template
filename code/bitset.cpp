@@ -141,3 +141,7 @@ public:
     friend Bitset operator>>(Bitset x,int k){return x>>=k;}
     friend Bitset operator~(Bitset x){return x.flip();}
 };
+/*
+_Find_first() : the first 1
+_Find_next(p) : the position of the first 1 after p (not included p)
+*/
