@@ -36,10 +36,11 @@
 
 % ---------- Colors ----------
 \definecolor{codeblue}{RGB}{0,0,255}
-\definecolor{codegreen}{RGB}{0,128,0}
+\definecolor{codegreen}{RGB}{54,112,77}
+\definecolor{codeblockcomment}{RGB}{76,106,125}
 \definecolor{codegray}{RGB}{115,115,115}
 \definecolor{codepurple}{RGB}{121,94,38}
-\definecolor{codenumber}{RGB}{9,134,88}
+\definecolor{codenumber}{RGB}{128,74,135}
 \definecolor{codeoperator}{RGB}{0,92,140}
 \definecolor{backcolour}{RGB}{248,248,246}
 \definecolor{coderule}{RGB}{210,210,205}
@@ -82,8 +83,21 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % ---------- Listings ----------
+\lstdefinelanguage{XCPCcpp}[]{C++}{
+    morecomment=[s][\color{codeblockcomment}]{/*}{*/},
+}
+\lstdefinelanguage{PowerShell}{
+    sensitive=false,
+    alsoletter={-},
+    morekeywords={begin,break,catch,class,continue,do,else,elseif,end,exit,finally,for,foreach,function,if,in,param,process,return,switch,throw,trap,try,until,while},
+    morekeywords=[2]{Get-Content,Out-File,Set-Content,Set-ExecutionPolicy,Write-Host,Write-Output},
+    morecomment=[l]{\#},
+    morecomment=[s][\color{codeblockcomment}]{<\#}{\#>},
+    morestring=[b]',
+    morestring=[b]",
+}
 \lstset{
-    language=C++,
+    language=XCPCcpp,
     backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
     keywordstyle=\bfseries\color{codeblue},
@@ -112,6 +126,7 @@
     framesep=4pt,
     xleftmargin=1.4em,
     xrightmargin=0.2em,
+    % Do not replace / or *: listings needs them to recognize C++ comments.
     literate=
       *{0}{{{\color{codenumber}0}}}{1}
        {1}{{{\color{codenumber}1}}}{1}
@@ -125,8 +140,6 @@
        {9}{{{\color{codenumber}9}}}{1}
        {+}{{{\color{codeoperator}+}}}{1}
        {-}{{{\color{codeoperator}-}}}{1}
-       {*}{{{\color{codeoperator}*}}}{1}
-       {/}{{{\color{codeoperator}/}}}{1}
        {\%}{{{\color{codeoperator}\%}}}{1}
        {=}{{{\color{codeoperator}=}}}{1}
        {<}{{{\color{codeoperator}<}}}{1}
@@ -173,7 +186,10 @@
 \end{titlepage}
 
 \pagenumbering{roman}
+\begingroup
+\small
 \tableofcontents
+\endgroup
 
 \clearpage
 \pagenumbering{arabic}
@@ -232,6 +248,7 @@
 \subsubsection{Dinic}
 \code{Dinic.cpp}
 
+\subsubsection{Dinic and Min-Cost Max-Flow (Zlw)}
 \code{Flow (Zlw).cpp}
 
 \newpage
@@ -245,7 +262,7 @@
 \code{FenwickTree.cpp}
 
 \subsection{Bitset}
-\code{bitset.cpp}
+\code{Bitset.cpp}
 
 \subsection{Heavy-Light Decomposition}
 \code{HLD.cpp}
@@ -292,11 +309,11 @@
 \subsection{Combination}
 \code{Combination.cpp}
 
-\subsection{The Sieve of Primes \& Euler's Totient Function \& Möbius Function}
+\subsection{Primes, Euler's Totient and M\"obius}
 \code{Primes.cpp}
 
 \subsection{Exgcd}
-\code{Exgcd.cpp}
+\code{exgcd.cpp}
 
 \subsection{CRT}
 \code{CRT.cpp}
@@ -315,6 +332,9 @@
 
 \subsection{NTT}
 \code{NTT.cpp}
+
+\subsection{CDQ Convolution (NTT)}
+\code{CDQ_NTT.cpp}
 
 \subsection{FWT}
 \code{FWT.cpp}
@@ -355,14 +375,12 @@
 \code{SAM.cpp}
 
 \begin{center}
-    \captionsetup{type=figure}
-    \resizebox{\linewidth}{!}{\input{\sourcedir SAM.tex}}
+    \captionsetup{type=figure,font=small}
+    \resizebox{0.9\linewidth}{!}{\input{\sourcedir SAM.tex}}
     \caption{Suffix-link tree for the suffix automaton of \texttt{aababa};
              green boxes mark terminal states.}
     \label{fig:sam-suffix-link-tree}
 \end{center}
-
-\newpage
 
 \section{Other}
 
@@ -374,7 +392,7 @@
 
 \subsection{Execution}
 \code[language=bash]{Run.bash}
-\code[language=bash]{Run.ps1}
+\code[language=PowerShell]{run.ps1}
 
 \subsection{Comparison}
 \code[language=bash]{Cmp.sh}

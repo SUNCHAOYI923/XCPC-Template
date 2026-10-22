@@ -91,3 +91,4 @@
 |$20$|$2026.10.06$|[The 5th Universal Cup. Stage 3: Grand Prix of Gorkovskaya](https://qoj.ac/contest/4571)|$4/14$|$66\%$|$5/14$|
 |$21$|$2026.10.07$|[2024牛客暑期多校训练营6](https://qoj.ac/contest/4573)|$6/11$|$40\%$|$8/11$|
 |$22$|$2026.10.11$|[The 2025 ICPC Northwestern Europe Regional Contest (NWERC 2025)](https://qoj.ac/contest/2694)|$9/12$|$30\%$|$11/12$|
+|$23$|$2026.10.18$|[The 2025 ICPC Central Europe Regional Contest (CERC 2025)](https://qoj.ac/contest/2814)|$8/12$|$57\%$|$9/12$|
