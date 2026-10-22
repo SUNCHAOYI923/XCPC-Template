@@ -77,6 +77,17 @@
 |$6$|$2026.05.27$|[The 2026 ICPC China Shaanxi National Invitational Programming Contest](https://qoj.ac/contest/3766)|$8/14$|$50\%$|$11/14$|
 |$7$|$2026.06.04$|[The 2026 ICPC China Zhejiang Province Programming Contest (23rd)](https://qoj.ac/contest/3749)|$7/13$|$53\%$|$9/13$|
 |$8$|$2026.06.11$|[The 2026 ICPC China Wuhan National Invitational and Hubei Provincial Programming Contest](https://qoj.ac/contest/3799)|$7/13$|$41\%$|$8/13$|
-|$8$|$2026.06.11$|[The 2026 ICPC China Wuhan National Invitational and Hubei Provincial Programming Contest](https://qoj.ac/contest/3799)|$7/13$|$41\%$|$8/13$|
 |$9$|$2026.06.18$|[The 2025 ICPC Southeastern Europe Regional Contest (SEERC 2025)](https://qoj.ac/contest/2828)|$8/12$|$42\%$|$9/12$|
 |$10$|$2026.06.25$|[The 2026 ICPC Europe Championship](https://qoj.ac/contest/3347)|$5/11$|$72\%$|$7/11$|
+|$11$|$2026.09.05$|[The 2026 Shandong Provincial Collegiate Programming Contest](https://qoj.ac/contest/3767)|$10/13$|$41\%$|$10/13$|
+|$12$|$2026.09.06$|[The 2026 ICPC Asia East Continent Online Contest (I)](https://qoj.ac/contest/4071)|$7/14$|$42\%$|$10/14$|
+|$13$|$2026.09.12$|[The 2026 ICPC Asia East Continent Online Contest (II)](https://qoj.ac/contest/4113)|$4/12$|$20\%$|$5/12$|
+|$14$|$2026.09.13$|[XIX Open Cup named after E.V. Pankratiev, Grand Prix of Korea](https://qoj.ac/contest/3920)|$6/13$|$68\%$|$13/13$|
+|$15$|$2026.09.19$|[CCPC Online 2026](https://qoj.ac/contest/4128)|$7/14$|$30\%$|$10/14$|
+|$16$|$2026.09.20$|[Grand Prix of Nizhny Novgorod](https://qoj.ac/contest/4126)|$3/13$|$50\%$|$5/13$|
+|$17$|$2026.09.26$|[The 2016 ACM-ICPC Asia Hong Kong Regional Contest](https://qoj.ac/contest/4074)|$2/11$|$66\%$|$6/11$|
+|$18$|$2026.09.27$|[The 2026 Peking University Team Selection Day 2](https://qoj.ac/contest/4565)|$4/13$|$42\%$|$5/13$|
+|$19$|$2026.10.05$|[The 2024 ICPC Southwestern Europe Regional Contest (SWERC 2024)](https://qoj.ac/contest/2691)|$8/13$|$33\%$|$10/13$|
+|$20$|$2026.10.06$|[The 5th Universal Cup. Stage 3: Grand Prix of Gorkovskaya](https://qoj.ac/contest/4571)|$4/14$|$66\%$|$5/14$|
+|$21$|$2026.10.07$|[2024牛客暑期多校训练营6](https://qoj.ac/contest/4573)|$6/11$|$40\%$|$8/11$|
+|$22$|$2026.10.11$|[The 2025 ICPC Northwestern Europe Regional Contest (NWERC 2025)](https://qoj.ac/contest/2694)|$9/12$|$30\%$|$11/12$|
